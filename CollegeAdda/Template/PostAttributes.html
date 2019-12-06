@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <style>
+        .selected{
+            font-size: 14px;
+            color: #666;
+            padding: 5px 20px;
+        }
+        .postad{
+            margin: 10px 25px;
+            padding: 10px 25px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="sell-title">
+            SELECTED CATEGORY
+        </div>
+        <div class="selected"><span class="type"></span>/<span class="subtype"></span>  </div>
+        <hr style="border: 0.8px solid rgb(185, 182, 182)">
+
+        <form action="http://localhost:3000/upload" enctype="multipart/form-data" method="POST">
+            <input type="text" name="type" style="display: none;">
+            <input type="text" name="sub_type" style="display: none;">
+        <div class="container-fluid col-md-11">
+                <div class="sell-title" style="padding-left: 0px;">INCLUDE SOME DETAILS</div>
+
+                    <label for="ad-title">Ad Title *</label><br>
+                    <input required type="text" class="form-control" style="width: 55%;" name="title" maxlength="70" id="ad-title">
+                    <small class="form-text text-muted">Mention the key features of your item (e.g. brand, model, age, type).</small><br>
+    
+                    <label for="ad-description">Description *</label><br>
+                    <textarea required class="form-control" name="description" maxlength="4096" style="width: 55%;" rows="5" id="ad-description"></textarea>
+                    <small class="form-text text-muted">Include condition, features and reason for selling.</small><br>
+        </div>
+                    <hr style="border: 0.8px solid rgb(185, 182, 182);">
+        <div class="container-fluid col-md-11">       
+                    <div class="sell-title" style="padding-left: 0px;">SET A PRICE</div>
+                    <label for="price">Price *</label><br>
+                    <div class="input-group" style="width: 55%;" >
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" style="border-radius: 0px;" id="inputGroupPrepend"> &#8377</span>
+                        </div>
+                        <input required type="tel" class="form-control" name="price" maxlength="70" id="price">
+                    </div> 
+                    <br>
+        </div>
+                    <hr style="border: 0.8px solid rgb(185, 182, 182)">
+        <div class="container-fluid col-md-11">
+                    <div class="sell-title" style="padding-left: 0px;">UPLOAD UPTO 10 IMAGES</div>
+                        <input required type="file" name="file" id="file">
+                    <br>
+                    <br><small class="form-text text-muted">This field is mandatory.</small>
+        </div>
+                    <hr style="border: 0.8px solid rgb(185, 182, 182)">
+        <div class="container-fluid col-md-11">
+                <div class="sell-title" style="padding-left: 0px;">CONFIRM YOUR LOCATION</div>
+                <label for="state">College Name *</label><br>
+                <select required class="form-control" style="width: 55%;" id="state" name="college_name">
+                    
+                </select><br>
+        </div><br>
+
+                <hr style="border: 0.8px solid rgb(185, 182, 182)">
+        <div class="container-fluid col-md-11">
+                <div class="sell-title" style="padding-left: 0px;">PERSONAL DETAILS</div>
+                <label for="owner_name">Name *</label><br>
+                <input required type="text" class="form-control" style="width: 55%;" name="owner_name" maxlength="70" id="owner_name">
+                <br><label for="owner_email">Email *</label><br>
+                <input required type="email" class="form-control" style="width: 55%;" name="owner_email" maxlength="70" id="owner_email">
+                <br><label for="owner_mob">Mobile number *</label><br>
+                <input required type="tel" class="form-control" style="width: 55%;" name="owner_mob" maxlength="10" minlength="10" id="owner_mob">
+        </div><br>
+        <hr style="border: 0.8px solid rgb(185, 182, 182)">
+        <button type="submit" class="postad btn btn-primary" style="width: auto;">POST AD</button>
+        <br>
+
+        </form>
+
+        <script>
+        
+        $('.type').html(type+' ');
+        $('.subtype').html(" "+sub_type);
+        $('[name="type"]').val(type);
+        $('[name="sub_type"]').val(sub_type);
+
+        $.getJSON('./State_City.json', function(data){
+            data.forEach((clg_name) => {
+                $('#state').append(`<option value=${clg_name.college}>${clg_name.college}</option>`)
+
+            });
+        });
+
+        </script>
+    </body>
+</html>
