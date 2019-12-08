@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/college-adda').then(()=> console.log("Connected to database"))
+mongoose.connect('mongodb+srv://admin-RK:raka9155@cluster0-anzbv.mongodb.net/test?retryWrites=true&w=majority/userDB').then(()=> console.log("Connected to database"))
 
 
 
