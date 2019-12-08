@@ -8,7 +8,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
 const findOrCreate = require('mongoose-findorcreate');
-mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://admin-RK:raka9155@cluster0-anzbv.mongodb.net/test?retryWrites=true&w=majority/userDB", { useNewUrlParser: true });
 
 const app = express();
 
