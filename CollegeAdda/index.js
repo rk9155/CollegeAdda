@@ -86,6 +86,11 @@ app.get("/register", function (req, res) {
     res.render("register");
 });
 
+
+app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
+
     // User.findById(req.user.id, function (err, foundUser) {
     //     if (err) {
     //         console.log(err);
@@ -109,7 +114,7 @@ app.post("/register", function (req, res) {
             res.redirect("/register");
         } else {
             passport.authenticate("local")(req, res, function () {
-                res.redirect('/');
+                res.reder("home2");
             });
         }
     });
@@ -124,7 +129,7 @@ app.post("/login", function (req, res) {
             console.log(err);
         } else {
             passport.authenticate("local")(req, res, function () {
-                res.redirect('/');
+                res.render("home2");
             });
         }
     });
