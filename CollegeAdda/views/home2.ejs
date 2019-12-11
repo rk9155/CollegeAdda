@@ -107,20 +107,27 @@
             window.location = 'http://localhost:3000/post';
         }
 
-
         $.get('http://localhost:3000/getProducts', function (data, status) {
-            data.forEach(prod_detail => {
-                console
+            details = data;
+            data.forEach((prod_detail, i) => {
                 $('.products').append(`<div class="card" style="width: 18rem;">
-                    <img class="card-img-top m-auto" style="padding:8px 30px ; height: 150px;: 20px;display: block;" src="./uploads/${prod_detail.image}" alt="Product image">
+                    <img class="card-img-top m-auto" style="padding:8px 30px ; height: 150px;: 20px;display: block;" src="./uploads/${prod_detail.image[0]}" alt="Product image">
                     <div class="card-body">
                         <span class="card-text card-price">₹ ${prod_detail.price}</span>
-                        <p class="card-text">${prod_detail.title}</p>
-                        <span class="card-text card-location">${prod_detail.college_name}, ${prod_detail.city}</span>
+                        <p class="card-text prod-title">${prod_detail.title}</p>
+                        <span class="card-text card-location">${prod_detail.college_name}</span>
                     </div>
                 </div>`);
             });
         });
+
+        setTimeout(function () {
+            $('.card').on('click', function () {
+                const title = $(this).find('.prod-title').text();
+
+                window.location.href = '/items/' + title;
+            });
+        }, 2000);
 
     </script>
 </body>
