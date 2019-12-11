@@ -13,10 +13,14 @@ var Storage= multer.diskStorage({
 });
 var upload = multer({
     storage: Storage
-}).single('file');
+}).any();
 
 router.post('/', upload ,function(req , res , next){
-    const image=req.file.filename;
+    const image = req.files;
+    var imgArray = [];
+    image.forEach(img => {
+        imgArray.push(img.filename);
+    });
     const title=req.body.title;
     const type=req.body.type;
     const sub_type=req.body.sub_type;
@@ -40,7 +44,7 @@ router.post('/', upload ,function(req , res , next){
         city: city,
         description: description,
         college_name: college_name,
-        image: image
+        image: imgArray
     });
     uploasProduct.save(function(err , doc){
         if(err) throw err;
