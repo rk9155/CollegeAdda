@@ -143,6 +143,8 @@ const post = require('./Routes/post');
 const items = require('./Routes/items');
 
 app.use(express.static('./Template'));
+app.use(express.static('./Template/uploads'));
+
 app.use('/', home);
 app.use('/post', post);
 app.use('/getProducts', getProducts);
