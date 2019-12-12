@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/jquery.js"></script>
+
+
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+        .sell-title {
+            width: 100%;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .details {
+            border: 0.8px solid rgb(185, 182, 182);
+            padding: 20px;
+        }
+
+        .carousel {
+            width: 65%;
+            float: left;
+            margin: 30px 0px 20px 0px;
+            height: 60vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container col-sm-10">
+        <div id="carouselExampleIndicators" class="carousel slide details" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <% for (var i = 1; i < image.length; i++) { %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<%i%>"></li>
+                <% } %>
+
+            </ol>
+            <div class=" carousel-inner">
+                    <div class="carousel-item active">
+                        <img style="height: 55vh;" class="d-block w-100" src="../<%=image[0]%>">
+                    </div>
+                    <% for (var i = 1; i < image.length; i++) { %>
+                    <div class="carousel-item">
+                        <img style="height: 55vh;" class="d-block w-100" src="../<%=image[i]%>">
+                    </div>
+                    <% } %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="details" style="width: 33%;float:right;margin-top: 30px;">
+            <div style="font-size: 35px;font-weight: bold;">₹ <%= (price) %></div>
+            <span style="font-size: 20px;"><%=title%></span>
+            <br><br>
+            <span style="font-size: 15px;width: 70%;"><%=college_name%></span>
+        </div>
+        <div class="details" style="width: 33%;height: 200px;margin-top: 20px;float:right;">
+            <div class="sell-title">Seller Description</div><br>
+            <div class="text-center">
+                <span style="font-size: 21px;margin: 10px"><%=owner_name%></span><br>
+                <span id='star' style="font-size: 14px;margin: 10px">**** *** ***<br></span>
+                <div class="spinner-border text-primary" style="display: none;margin: 10px" id="loader"></div>
+                <span id="number" style="font-size: 16px;display: none;margin: 10px;"><%=owner_mob%></span>
+                <span id='toggelNumber' style="font-size: 14px;margin: 10px"><a href="">Show number</a></span>
+            </div>
+            
+            <br>
+        </div>
+
+        <div class="details" style="float: left;width: 65%;">
+            <div class="sell-title">Details</div><br>
+            <div style="display: inline;">
+                <span style="margin-right:70px;font-size: 15px;color: #888888;">Type</span>
+                <span style="font-size: 15px;color: #000;"><%=sub_type%> in <%=type%></span>
+            </div>
+            <br>
+            <hr style="border: 0.4px solid rgb(185, 182, 182);">
+            <div class="sell-title">Description</div><br>
+            <div style=" width: 400px;">
+                <span style="font-size: 17px;color: #444;"><%=description%></span>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+
+        $('#toggelNumber').click(function(event){
+            event.preventDefault();
+            $(this).hide();
+            $('#star').hide();
+            $('#loader').show();
+            setTimeout(function(){
+                $('#loader').hide();
+                $('#number').show();
+            },1500); 
+        });
+    
+    </script>
+
+</body>
+
+</html>
