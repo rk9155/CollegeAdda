@@ -14,4 +14,6 @@ app.use('/post', post);
 app.use('/getProducts', getProducts);
 app.use('/upload', upload);
 app.use('/items' ,items);
-app.listen("3000");
+
+const PORT = process.env.PORT;
+app.listen(PORT);

@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "ye hai college ki duniya",
   "main": "index.js",
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
