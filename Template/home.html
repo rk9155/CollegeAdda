@@ -64,10 +64,10 @@
     <script>
 
         function sellProduct() {
-            window.location = 'http://localhost:3000/post';
+            window.location = '/post';
         }
 
-        $.get('http://localhost:3000/getProducts', function (data, status) {
+        $.get('/getProducts', function (data, status) {
             details = data;
             data.forEach((prod_detail, i) => {
                 $('.products').append(`<div class="card" style="width: 18rem;">
