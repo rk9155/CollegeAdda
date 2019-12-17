@@ -53,7 +53,8 @@ router.get('/google/callback' , passport.authenticate('google') , (req , res )=>
 passport.use(new facebookStrategy({
     clientID: keys.facebookAppID,
     clientSecret: keys.facebookAppSecret,
-    callbackURL: '/auth/facebook/callback'
+    callbackURL: '/auth/facebook/callback',
+    proxy: true
 } , 
 (accessToken , refreshToken , profile ,done)=>{
     console.log(profile);    
