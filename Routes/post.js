@@ -4,7 +4,7 @@ const path= require('path');
 
 
 router.get('/', (req , res) =>{
-    res.redirect("Post.html");
+    res.redirect("post.html");
 });
 
 router.get('/attributes', (req , res) =>{
