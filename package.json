@@ -8,8 +8,7 @@
     "npm": "6.12.1"
   },
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "ng build"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
