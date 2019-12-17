@@ -4,11 +4,11 @@ const path= require('path');
 
 
 router.get('/', (req , res) =>{
-    res.sendFile(path.resolve(__dirname+"/../Template/Post.html"));
+    res.redirect("Post.html");
 });
 
 router.get('/attributes', (req , res) =>{
-    res.sendFile(path.resolve(__dirname+"/../Template/PostAttributes.html"));
+    res.redirect("../PostAttributes.html");
 });
 
 module.exports = router;
