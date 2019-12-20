@@ -111,7 +111,8 @@
         <script>
             var type=" ";
             var sub_type=" ";
-            $('.dropdown-item').on('click',function(){
+            $('.dropdown-item').on('click',function(event){
+                event.preventDefault();
                 sub_type = $(this).text();
                 type = ($(this).parent().siblings('button').text()).trim();
                 $('.container').load('/post/attributes');

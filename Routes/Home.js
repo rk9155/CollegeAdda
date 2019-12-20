@@ -4,7 +4,9 @@ const path = require('path');
 
 
 router.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname + "/../Template/home.html"));
+    res.render('home2',{
+        user: req.user ? req.user : ""
+    });
 });
 
 module.exports = router;

@@ -12,6 +12,7 @@ const loggedInUser = require('./Routes/loggedInUser');
 const keys = require('./config/keys');
 
 
+app.use(express.static('./views'));
 
 app.use(cookieSession({
     maxAge: 24*60*60*1000,

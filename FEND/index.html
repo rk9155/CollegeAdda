@@ -61,34 +61,30 @@
             background-color: #ff8d1e;
             color: #fff !important;
         }
-
         .item-category:hover,
         .item-category:focus {
             background-color: #ff8d1e;
             color: #fff !important;
         }
 
-        .active-item {
+        .active-item{
             background-color: #ff8d1e;
             color: #fff !important;
         }
-
-        .active-category {
+        
+        .active-category{
             background-color: #ff8d1e;
             color: #fff !important;
         }
-
-        .avatar {
+        .avatar{
             display: none;
-            cursor: pointer;
         }
 
-        @media only screen and (max-width: 720px) {
-            .login-sell-btn {
+        @media only screen and (max-width: 720px){
+            .login-sell-btn{
                 margin-right: auto;
             }
-
-            #hide-add {
+            #hide-add{
                 display: none;
             }
         }
@@ -314,12 +310,6 @@
             transition: all 250ms ease-in-out 0s;
 
         }
-        .card{
-            cursor: pointer;
-        }
-        .dropdown-toggle::after{
-            content: none;
-        }
     </style>
 </head>
 
@@ -328,30 +318,21 @@
 
     <div style="width: 100%;">
         <div class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color: rgb(39, 36, 67);">
-            <a class="navbar-brand text-center col-md-2 col-12" style="font-size: 25px;font-weight: bolder;"
-                href="">COLLEGE ADDA</a>
-            <input type="text" class="ml-auto mr-auto col-xs-12 col-md-3" id="search"
-                placeholder="Search by College Name">
-            <div class="row col-12 col-md-3 ml-auto text-center login-sell-btn">
-                <div class="nav-item dropdown avatar ml-auto mr-auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="<%=user.picture%>" class="rounded-circle z-depth-0 mr-auto ml-auto"
-                        alt="avatar image" height="40">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="/api/logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
-                    </div>
-                  </div>
-                <div class=" active col-6 logged-in ml-auto mr-auto">
-                    <a class="nav-link btn login-button" href="/auth/google">Login
+            <a class="navbar-brand text-center col-md-2 col-12" style="font-size: 25px;font-weight: bolder;" href="">COLLEGE ADDA</a>
+            <input type="text" class="ml-auto mr-auto col-xs-12 col-md-3" id="search" placeholder="Search by College Name">
+            <div class="avatar" style="margin: 10px;">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+                            class="rounded-circle z-depth-0" alt="avatar image" height="40">
+            </div>
+            <div class="row col-12 col-md-3 ml-auto login-sell-btn">
+                <div class=" active col-6">
+                    <a class="nav-link btn login-button" href="">Login
                         <i class="fab fa-google-plus-g"></i>
                         <span class="sr-only">(current)</span>
                     </a>
                 </div>
-                <div class="active col-6 ml-auto mr-auto">
-                    <a class="nav-link btn sell-button" href="/post">Sell
+                <div class="active col-6">
+                    <a class="nav-link btn sell-button" href="">Sell
                         <i class="fas fa-camera ml-2"></i>
                     </a>
                 </div>
@@ -363,9 +344,8 @@
         <div class="mb-1 navbar navbar-expand-lg navbar-dark"
             style="background-color: #fff;box-shadow: 0 6px 4px -5px black;padding: 0px;">
             <div class="container col-md-10">
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-                    data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false"
-                    aria-label="Toggle navigation" style="background-color: #ff8d1e; margin: 10px;">
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #ff8d1e; margin: 10px;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -409,8 +389,7 @@
     <div class="container col-md-10">
         <h3 style="color: rgb(39, 36, 67);font-weight: bold;">Selected Product</h3><br>
         <div class="row" style="border-bottom: 2px solid #ff8d1e;">
-            <div class="nav-item"><a class="nav-link item-types active-item" style="color: rgb(39, 36, 67);"
-                    href="">Trending
+            <div class="nav-item"><a class="nav-link item-types active-item" style="color: rgb(39, 36, 67);" href="">Trending
                     Items</a></div>
             <div class="nav-item"><a class="nav-link item-types" style="color: rgb(39, 36, 67);" href="">New
                     Arivals</a></div>
@@ -426,24 +405,21 @@
                     <img src="./devloper.jpg" alt="trending item" style="width: 100%; height: 100%;">
                 </div>
                 <div class="row">
-                    <div class="card col-4 col-md-3"
-                        style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <div class="card col-4 col-md-3" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                         <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
                         <div class="card-body" style="padding: 2px;">
                             <p class="card-text" stlye="font-size: medium;font-weight: bolder;">₹ 30000</p>
                             </p>
                         </div>
                     </div>
-                    <div class="card col-4 col-md-3"
-                        style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <div class="card col-4 col-md-3" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                         <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
                         <div class="card-body" style="padding: 2px;">
                             <p class="card-text" stlye="font-size: mediumfont-weight: bolder;">₹ 30000</p>
                             </p>
                         </div>
                     </div>
-                    <div class="card col-4 col-md-3"
-                        style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <div class="card col-4 col-md-3" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                         <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
                         <div class="card-body" style="padding: 2px;">
                             <p class="card-text" stlye="font-size: mediumfont-weight: bolder;">₹ 30000</p>
@@ -456,21 +432,111 @@
         <br>
         <h3 style="color: rgb(39, 36, 67);font-weight: bold;">Featured Products</h3><br>
         <div class="row col-12" style="border-bottom: 2px solid #ff8d1e;padding: 0px;">
-            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category active-category"
-                    style="color: rgb(39, 36, 67);width: 100%;" href="">Laptop</a></div>
-            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category"
-                    style="color: rgb(39, 36, 67);width: 100%;" href="">Mobile</a></div>
-            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category"
-                    style="color: rgb(39, 36, 67);width: 100%;" href="">Books</a></div>
-            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category"
-                    style="color: rgb(39, 36, 67);width: 100%;" href="">Cycle</a></div>
+            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category active-category" style="color: rgb(39, 36, 67);width: 100%;" href="">Laptop</a></div>
+            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category" style="color: rgb(39, 36, 67);width: 100%;" href="">Mobile</a></div>
+            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category" style="color: rgb(39, 36, 67);width: 100%;" href="">Books</a></div>
+            <div class="nav-item" style="padding: 0px;"><a class="nav-link item-category" style="color: rgb(39, 36, 67);width: 100%;" href="">Cycle</a></div>
         </div>
 
         <div class="type-item-image col-md-12   " style="padding:5px 0px 20px 0px;">
 
-            <div class="row products">
-                
-                
+            <div class="row">
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="./devloper.jpg" alt="Card image cap" style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ 30000</p>
+                        <p class="card-text" style="font-size: small;">Some quick example text to build on the card title.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -511,9 +577,9 @@
 
                     <div class="col-6 col-sm-6 col-md-4">
                         <div class="widget no-box">
-                            <h5 class="widget-title">Help Us<span></span></h5>
-                            <p>Please Share your valuable feedback with us.</p>
-                            <a class="btn" href="mailto:yashjanoria999@gmail.com" target="_blank">Feedback</a>
+                            <h5 class="widget-title">Get Started<span></span></h5>
+                            <p>Sell your unused stuff now.</p>
+                            <a class="btn" href="" target="_blank">Register Now</a>
                         </div>
                     </div>
 
@@ -563,43 +629,15 @@
 
 
     <script>
-
-        $.get('/getProducts', function (data, status) {
-            details = data;
-            data.forEach((prod_detail, i) => {
-                $('.products').append(`<div class="card col-6 col-md-3 col-lg-2 col-sm-4"
-                    style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
-                    <img class="card-img-top" src="./uploads/${prod_detail.image[0]}" alt="Product Image" style="padding: 10px;">
-                    <div class="card-body" style="padding: 2px;">
-                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ ${prod_detail.price}</p>
-                        <p class="card-text prod-title" style="font-size: small;">${prod_detail.title}
-                        </p>
-                    </div>
-                </div>`);
-            });
+        $('a').click(function(event){
+            event.preventDefault();
         });
 
-        if("<%=user.picture%>" != ""){
-            $('.logged-in').hide();
-            $('.avatar').show();
-            $('.sell-button').addClass('mt-2');
-        }
-        else{
-            console.log('not signed in');
-        }
-        
-        
-        
-
-        setTimeout(function () {
-            $('.card').on('click', function () {
-                const title = $(this).find('.prod-title').text();
-
-                window.location.href = '/items/' + title;
-            });
-        }, 2000);
-
+        $('.item-types').click(function(){
+            $('.active-item').removeClass('.active-item');
+        })
     </script>
+
 </body>
 
 </html>

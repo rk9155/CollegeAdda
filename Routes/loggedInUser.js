@@ -7,7 +7,7 @@ router.get('/logged-in-user' , (req,res) =>{
 
 router.get('/logout', (req,res)=>{
     req.logOut();
-    res.redirect('home2')
+    res.redirect('/')
 })
 module.exports = router;
 

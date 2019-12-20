@@ -4,11 +4,11 @@ const path= require('path');
 
 
 router.get('/', (req , res) =>{
-    res.redirect("post.html");
+    res.render("post");
 });
 
 router.get('/attributes', (req , res) =>{
-    res.redirect("../PostAttributes.html");
+    res.render('post_attributes');
 });
 
 module.exports = router;
