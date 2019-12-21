@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="jquery.js"></script>
+
+
+    <style>
+        .card {
+            float: left;
+            margin: 10px 20px;
+            height: 300px;
+        }
+
+        .card-body {
+            border-left: 4px solid yellow;
+            border-right: 4px solid yellow;
+        }
+
+        .card-price {
+            font-size: 23px;
+            font-weight: bolder;
+        }
+
+        .card-title {
+            color: gray;
+        }
+
+        .card-location {
+            color: #000;
+            font-size: 13px;
+            display: block;
+            position: relative;
+            bottom: 0px;
+        }
+
+        .sell {
+            float: right;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .sell-item {
+            width: 100px;
+            padding: 10px;
+        }
+
+        .card:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sell">
+        <button class="sell-item btn btn-primary" onclick="sellProduct()">SELL</button>
+    </div>
+    <div class="container">
+        <div class="products"></div>
+    </div>
+    <script>
+
+        function sellProduct() {
+            window.location = '/post';
+        }
+
+        $.get('/getProducts', function (data, status) {
+            details = data;
+            data.forEach((prod_detail, i) => {
+                $('.products').append(`<div class="card" style="width: 18rem;">
+                    <img class="card-img-top m-auto" style="padding:8px 30px ; height: 150px;: 20px;display: block;" src="./uploads/${prod_detail.image[0]}" alt="Product image">
+                    <div class="card-body">
+                        <span class="card-text card-price">₹ ${prod_detail.price}</span>
+                        <p class="card-text prod-title">${prod_detail.title}</p>
+                        <span class="card-text card-location">${prod_detail.college_name}</span>
+                    </div>
+                </div>`);
+            });
+        });
+
+        setTimeout(function () {
+            $('.card').on('click', function () {
+                const title = $(this).find('.prod-title').text();
+
+                window.location.href = '/items/' + title;
+            });
+        }, 2000);
+
+    </script>
+</body>
+
+</html>
