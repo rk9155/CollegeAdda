@@ -354,11 +354,37 @@
                     </a>
                 </div>
                 <div class="active col-6 ml-auto mr-auto">
-                    <a class="nav-link btn sell-button" href="/post">Sell
+                    <a class="nav-link btn sell-button" style="color: #fff;"
+                        <% if( user != ""){%>
+                            href="/post">
+                        <%}else{%>
+                           type="button" data-toggle="modal" data-target="#exampleModal">
+                        <%}%>
+
+                        Sell
                         <i class="fas fa-camera ml-2"></i>
                     </a>
+                      
+                      <!--Sign in Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" style="background-color: #4b92dc;" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <a href="/auth/google" type="button" class="btn btn-gplus w-50" style="background-color: #c32f10;color: #fff;"><i class="fab fa-google-plus-g pr-1"></i> Google +</a href="/auth/google" >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
+
+            
 
         </div>
 
