@@ -11,6 +11,7 @@ const schema = new mongoose.Schema({
     owner_name: String,
     owner_mob: String,
     owner_email: String,
+    owner_image: String,
     date_of_post: {type: Date , default: Date.now()},
     price: Number,
     state: String,

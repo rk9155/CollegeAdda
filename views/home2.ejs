@@ -621,17 +621,11 @@
         else {
             console.log('not signed in');
         }
+        $('.card').on('click', function () {
+            const title = $(this).find('.prod-title').text();
 
-
-
-
-        setTimeout(function () {
-            $('.card').on('click', function () {
-                const title = $(this).find('.prod-title').text();
-
-                window.location.href = '/items/' + title;
-            });
-        }, 2000);
+            window.location.href = '/items/' + title;
+        });
 
     </script>
 </body>
