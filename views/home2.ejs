@@ -314,10 +314,12 @@
             transition: all 250ms ease-in-out 0s;
 
         }
-        .card{
+
+        .card {
             cursor: pointer;
         }
-        .dropdown-toggle::after{
+
+        .dropdown-toggle::after {
             content: none;
         }
     </style>
@@ -334,16 +336,17 @@
                 placeholder="Search by College Name">
             <div class="row col-12 col-md-3 ml-auto text-center login-sell-btn">
                 <div class="nav-item dropdown avatar ml-auto mr-auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="<%=user.picture%>" class="rounded-circle z-depth-0 mr-auto ml-auto"
-                        alt="avatar image" height="40">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<%=user.picture%>" class="rounded-circle z-depth-0 mr-auto ml-auto" alt="avatar image"
+                            height="40">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="/api/logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/api/logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
                     </div>
-                  </div>
+                </div>
                 <div class=" active col-6 logged-in ml-auto mr-auto">
                     <a class="nav-link btn login-button" href="/auth/google">Login
                         <i class="fab fa-google-plus-g"></i>
@@ -469,8 +472,21 @@
         <div class="type-item-image col-md-12   " style="padding:5px 0px 20px 0px;">
 
             <div class="row products">
-                
-                
+
+                <% product.forEach(prod_detail => { %>
+                <div class="card col-6 col-md-3 col-lg-2 col-sm-4"
+                    style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
+                    <img class="card-img-top" src="/image/<%=prod_detail.image[0]%>" alt="Product Image"
+                        style="padding: 10px;">
+                    <div class="card-body" style="padding: 2px;">
+                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ <%=prod_detail.price%></p>
+                        <p class="card-text prod-title" style="font-size: small;"><%=prod_detail.title%>
+                        </p>
+                    </div>
+                </div>
+                <%})%>
+
+
             </div>
         </div>
     </div>
@@ -564,32 +580,24 @@
 
     <script>
 
-        $.get('/getProducts', function (data, status) {
-            details = data;
-            data.forEach((prod_detail, i) => {
-                $('.products').append(`<div class="card col-6 col-md-3 col-lg-2 col-sm-4"
-                    style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
-                    <img class="card-img-top" src="./uploads/${prod_detail.image[0]}" alt="Product Image" style="padding: 10px;">
-                    <div class="card-body" style="padding: 2px;">
-                        <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ ${prod_detail.price}</p>
-                        <p class="card-text prod-title" style="font-size: small;">${prod_detail.title}
-                        </p>
-                    </div>
-                </div>`);
-            });
-        });
+        // $.get('/getProducts', function (data, status) {
+        //     details = data;
+        //     data.forEach((prod_detail, i) => {
+        //         $('.products').append(``);
+        //     });
+        // });
 
-        if("<%=user.picture%>" != ""){
+        if ("<%=user.picture%>" != "") {
             $('.logged-in').hide();
             $('.avatar').show();
             $('.sell-button').addClass('mt-2');
         }
-        else{
+        else {
             console.log('not signed in');
         }
-        
-        
-        
+
+
+
 
         setTimeout(function () {
             $('.card').on('click', function () {
