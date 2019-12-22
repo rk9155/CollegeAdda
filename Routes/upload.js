@@ -3,17 +3,28 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const productUpload = require('../Models/product');
+const Grid = require('gridfs-stream');
+const GridFsStorage = require('multer-gridfs-storage');
 
 
-var Storage = multer.diskStorage({
-    destination: path.resolve(__dirname + "/../Template/uploads"),
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname));
+// var Storage = multer.diskStorage({
+//     destination: path.resolve(__dirname + "/../Template/uploads"),
+//     filename: (req, file, cb) => {
+//         cb(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname));
+//     }
+// });
+
+const storage = new GridFsStorage({
+    url: 'mongodb+srv://Yash2412:yash2412@cluster0-6rqau.mongodb.net/college-adda',
+    file: (req, file) => {
+        return {
+            filename: 'file_' + Date.now()
+        };
     }
 });
-var upload = multer({
-    storage: Storage
-}).any();
+
+
+var upload = multer({storage}).any();
 
 router.post('/', upload, function (req, res, next) {
     const image = req.files;
