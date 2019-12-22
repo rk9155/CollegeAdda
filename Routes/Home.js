@@ -7,12 +7,12 @@ const products = require('../Models/product');
 router.get('/', (req, res) => {
     async function getProducts(){
         const product = await products.find({})
-        .limit(12)
         .sort({date: 1})
 
         res.render('home2',{
             user: req.user ? req.user : "",
-            product: product
+            product: product,
+
         });
     }
 
