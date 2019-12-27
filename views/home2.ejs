@@ -322,6 +322,24 @@
         .dropdown-toggle::after {
             content: none;
         }
+
+        #searchResult {
+            overflow-y: scroll;
+            height: 200px;
+            display: none;
+            position: relative;            
+        }
+
+        #searchResult::-webkit-scrollbar {
+            width: 0px;
+        }
+        .searched{
+            cursor: pointer;
+        }
+        .searched:hover{
+            background-color: #4b92dc;
+            color: #fff !important;
+        }
     </style>
 </head>
 
@@ -332,8 +350,15 @@
         <div class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color: rgb(39, 36, 67);">
             <a class="navbar-brand text-center col-md-2 col-12" style="font-size: 25px;font-weight: bolder;"
                 href="">COLLEGE ADDA</a>
-            <input type="text" class="ml-auto mr-auto col-xs-12 col-md-3" id="search"
-                placeholder="Search by College Name">
+            <div class="search-bar ml-auto mr-auto col-xs-12 col-md-3">
+                <input type="text" class="col-12" id="search"
+                placeholder="Search by College Name"><br>
+                <ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult">
+
+                </ul>
+            </div>
+
+            
 
             <div class="row col-12 col-md-3 ml-auto text-center login-sell-btn">
                 <div class="nav-item dropdown avatar ml-auto mr-auto">
@@ -511,8 +536,8 @@
             <div class="type-item-image col-md-12   " style="padding:5px 0px 20px 0px;">
 
                 <div class="row products">
-                    <% var no_of_item_displayed = 12; %>
-                    <% for(var i=0; i< 12;i++) {var prod_detail=product[i]; %>
+                    <% var no_of_item_displayed = product.length; %>
+                    <% for(var i=0; i< no_of_item_displayed;i++) {var prod_detail=product[i]; %>
                     <div class="card col-6 col-md-3 col-lg-3 col-sm-4"
                         style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                         <img class="card-img-top" src="/image/<%=prod_detail.image[0]%>" alt="Product Image"
@@ -616,6 +641,7 @@
                     </div>
                 </div>
             </div>
+           
         </footer>
 
 
@@ -624,7 +650,7 @@
                 event.preventDefault();
                 <% no_of_item_displayed += 4; %>
                     <% var limit = (product.length < no_of_item_displayed) ? product.length : no_of_item_displayed; %>
-                    $('.products').append(`<% for(var i=12; i< limit ;i++) {var prod_detail=product[i]; %>
+                    $('.products').append(`<% for(var i=no_of_item_displayed-4; i< limit ;i++) {var prod_detail=product[i]; %>
                     <div class="card col-6 col-md-3 col-lg-3 col-sm-4"
                         style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                         <img class="card-img-top" src="/image/<%=prod_detail.image[0]%>" alt="Product Image"
@@ -637,6 +663,12 @@
                         </div>
                     </div>
                     <%}%>`);
+
+                    $('.card').on('click', function () {
+                const title = $(this).find('.prod-title').text();
+
+                window.location.href = '/items/' + title;
+            });
             });
 
             if ("<%=user.picture%>" != "") {
@@ -646,37 +678,46 @@
             }
             $('.card').on('click', function () {
                 const title = $(this).find('.prod-title').text();
-
                 window.location.href = '/items/' + title;
-            });
-            var clg = [];
-            $.getJSON('./State_City.json', function (data) {
-                data.forEach((clg_name) => {
-                    clg.push(clg_name.college);
-                });
             });
 
 
             $('#search').on('keyup', function (e) {
-                if (e.keyCode == 13) {
-                    
+                if (e.keyCode == 39) {
+                    $(".searched:hover").next().focus();
+
+                }
+                if (e.keyCode == 37) {
+                    $(".searched:focus").prev().focus();
+
                 }
 
-                const regex = new RegExp('/'+$(this).val()+'/gi');
-                    const str = clg[0];
-                    let m;
-
-                    while ((m = regex.exec(str)) !== null) {
-                        // This is necessary to avoid infinite loops with zero-width matches
-                        if (m.index === regex.lastIndex) {
-                            regex.lastIndex++;
+                $('#searchResult').html(``);
+                $('#searchResult').show();
+                let searchData = $(this).val();
+                let newReg = new RegExp(searchData, "i");
+                $.getJSON('./State_City.json', function (data) {
+                    data.forEach((clg_name) => {
+                        if (clg_name.college.search(newReg) != -1) {
+                            $('#searchResult').append(`<li class="list-group-item searched">${clg_name.college}</li>`);
+                            $('.searched').click(function(){                                
+                                window.location.href = '/' + $(this).text();
+                            });
                         }
-
-                        // The result can be accessed through the `m`-variable.
-                        m.forEach((match, groupIndex) => {
-                            console.log(`Found match, group ${groupIndex}: ${match}`);
-                        });
-                    }   
+                        if (searchData == '') {
+                            $('#searchResult').html(``);
+                            $('#searchResult').hide();
+                        }
+                    });
+                });
+            });
+            $('#search').focusout(function (e) {
+                setTimeout(()=>{
+                    $('#searchResult').hide();
+                },500);
+            });
+            $('#search').on('focus', function (e) {
+                $('#searchResult').show();
             });
 
         </script>

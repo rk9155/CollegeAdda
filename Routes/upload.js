@@ -46,7 +46,7 @@ router.post('/', upload, function (req, res, next) {
     const description = req.body.description;
     const college_name = req.body.college_name;
     const uploasProduct = new productUpload({
-        title: title,
+        title: title.trim(),
         type: type,
         sub_type: sub_type,
         owner_name: owner_name,
