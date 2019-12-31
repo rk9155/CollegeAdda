@@ -159,7 +159,7 @@
         $('[name="type"]').val(type);
         $('[name="sub_type"]').val(sub_type);
 
-        $.getJSON('./State_City.json', function (data) {
+        $.getJSON('../State_City.json', function (data) {
             data.forEach((clg_name) => {
                 $('#state').append(`<option value='${clg_name.college}'>${clg_name.college}</option>`)
 
