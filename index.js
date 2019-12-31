@@ -24,14 +24,13 @@ app.use(passport.session());
 
 app.set('view engine','ejs');
 app.use(express.static('./Template'));
-app.use(express.static('./Template/uploads'));
 app.use('/', home);
 app.use('/post', post);
 app.use('/image', image);
 app.use('/upload', upload);
 app.use('/items' , items);
 app.use('/auth' , auth);
-app.use('/api/', loggedInUser);
+app.use('/api', loggedInUser);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);

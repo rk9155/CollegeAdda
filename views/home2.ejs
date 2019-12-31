@@ -380,7 +380,7 @@
                     </a>
                 </div>
                 <div class="active col-6 ml-auto mr-auto">
-                    <a class="nav-link btn sell-button" style="color: #fff;" <% if( user != ""){%> href="/post">
+                    <a class="nav-link btn sell-button" style="color: #fff;" <% if( user != ""){%> href="/post/add">
                         <%}else{%>
                         type="button" data-toggle="modal" data-target="#exampleModal">
                         <%}%>
@@ -701,7 +701,7 @@
                         if (clg_name.college.search(newReg) != -1) {
                             $('#searchResult').append(`<li class="list-group-item searched">${clg_name.college}</li>`);
                             $('.searched').click(function(){                                
-                                window.location.href = 'https://college-adda.herokuapp.com/' + $(this).text();
+                                window.location.href = '/' + $(this).text();
                             });
                         }
                         if (searchData == '') {
