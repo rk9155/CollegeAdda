@@ -1,305 +1,176 @@
-[
-   {
-     "college":"Amity School Of Engineering & Technology (Noida)"
-   },
-   {
-     "college":"Army Institute Of Technology (Pune)"
-   },
-   {
-     "college":"Asia Pacific Institute of Information Technology (APIIT SD) (Panipat)"
-   },
-   {
-     "college":"B.I.T. Sindri (Dhanbad)"
-   },
-   {
-     "college":"BMS College Of Engineering (Bangalore)"
-   },
-   {
-     "college":"BMS Institute Of Technology & Management (Bangalore)"
-   },
-   {
-     "college":"BRACT'S Vishwakarma Institute of Information Technology (Pune)"
-   },
-   {
-     "college":"Bannari Amman Institute Of Technology (Erode)"
-   },
-   {
-     "college":"Bharati Vidyapeeth University College Of Engineering (Pune)"
-   },
-   {
-     "college":"Birla Institute Of Technology & Science (Pilani)"
-   },
-   {
-     "college":"Birla Institute Of Technology (Ranchi)"
-   },
-   {
-     "college":"CVR College Of Engineering (Hyderabad)"
-   },
-   {
-     "college":"Chaitanya Bharathi Institute Of Technology (Hyderabad)"
-   },
-   {
-     "college":"College Of Engineering, Guindy (Chennai)"
-   },
-   {
-     "college":"College Of Engineering, Pune (Pune)"
-   },
-   {
-     "college":"Cummins College of Engineering for Women (Pune)"
-   },
-   {
-     "college":"Delhi Technological University (New-Delhi)"
-   },
-   {
-     "college":"Dwarkadas J. Sanghvi College Of Engineering (Mumbai)"
-   },
-   {
-     "college":"Faculty Of Engineering, DIT University (Dehradun)"
-   },
-   {
-     "college":"Galgotias College Of Engineering And Technology (Noida)"
-   },
-   {
-     "college":"Ganeshi Lal Bajaj Institute Of Technology & Management (Noida)"
-   },
-   {
-     "college":"Government College Of Engineering (Amravati)"
-   },
-   {
-     "college":"Government College Of Engineering (Karad)"
-   },
-   {
-     "college":"Govt. Model Engineering College (Cochin)"
-   },
-   {
-     "college":"Guru Nanak Dev Engineering College (Ludhiana)"
-   },
-   {
-     "college":"IES College Of Technology (Bhopal)"
-   },
-   {
-     "college":"IIIT, Allahabad (Allahabad)"
-   },
-   {
-     "college":"IIIT, Hyderabad (Hyderabad)"
-   },
-   {
-     "college":"IIT, Bombay (Mumbai)"
-   },
-   {
-     "college":"IIT, Delhi (Delhi)"
-   },
-   {
-     "college":"IIT, Kanpur (Kanpur)"
-   },
-   {
-     "college":"IIT, Kharagpur (Kharagpur)"
-   },
-   {
-     "college":"IMS Engineering College (Ghaziabad)"
-   },
-   {
-     "college":"Indian Institute Of Technology (Indian School Of Mines), Dhanbad (Dhanbad)"
-   },
-   {
-     "college":"Indraprastha Institute Of Information Technology Delhi (New Delhi)"
-   },
-   {
-     "college":"Institute Of Engineering & Technology, J.K.Lakshmipat University (Jaipur)"
-   },
-   {
-     "college":"Institute Of Technology (Ahmedabad)"
-   },
-   {
-     "college":"J.B. Institute Of Technology (Dehradun)"
-   },
-   {
-     "college":"JIS College Of Engineering (Kalyani, West Bengal)"
-   },
-   {
-     "college":"JSS Academy Of Technical Education (Bangalore)"
-   },
-   {
-     "college":"Jaipur Engineering College And Research Center (Jaipur)"
-   },
-   {
-     "college":"Jawaharlal Nehru National College Of Engineering (Shimoga)"
-   },
-   {
-     "college":"K L University (Guntur)"
-   },
-   {
-     "college":"K.S.R. College Of Enginnering (Thiruchengode)"
-   },
-   {
-     "college":"KIET Group Of Institutions (Ghaziabad)"
-   },
-   {
-     "college":"KLE Dr M.S Sheshgiri College Of Engineering And Technology (Belgaum)"
-   },
-   {
-     "college":"KLS Gogte Institute Of Technology (Belagavi)"
-   },
-   {
-     "college":"Kongu Engineering College (Erode)"
-   },
-   {
-     "college":"Kuppam Engineering College (Kuppam)"
-   },
-   {
-     "college":"Lakshmi Narain College Of Technology (Bhopal)"
-   },
-   {
-     "college":"Lovely Professional University (Phagwara)"
-   },
-   {
-     "college":"M V J College Of Engineering (Bangalore)"
-   },
-   {
-     "college":"M.S. Engineering College (Bangalore)"
-   },
-   {
-     "college":"M.S. Ramaiah Institute Of Technology (Bangalore)"
-   },
-   {
-     "college":"MIT College Of Engineering (Pune)"
-   },
-   {
-     "college":"Madhav Institute of Technology & Science (Gwalior)"
-   },
-   {
-     "college":"Maharashtra Institute Of Technology (Aurangabad)"
-   },
-   {
-     "college":"Malla Reddy College of Engineering & Technology (Secunderabd)"
-   },
-   {
-     "college":"Manipal Institue Of Technology (Manipal)"
-   },
-   {
-     "college":"Mepco Schlenk Engineering College (Sivakasi)"
-   },
-   {
-     "college":"Muffakham Jah College Of Engineering And Technology (Hyderabad)"
-   },
-   {
-     "college":"NIT, Karnataka (Mangalore)"
-   },
-   {
-    "college":"NIT, Patna"
-  },
-   {
-     "college":"National Institute Of Science & Technology (Berhampur)"
-   },
-   {
-     "college":"Netaji Subhas Institute Of Technology* (New Delhi)"
-   },
-   {
-     "college":"P.E.S. College Of Engineering (Mandya)"
-   },
-   {
-     "college":"PES University (Bangalore)"
-   },
-   {
-     "college":"PSG College of Technology (Coimbatore)"
-   },
-   {
-     "college":"Pimpri Chinchwad College Of Engineering (Pune)"
-   },
-   {
-     "college":"R.M.D. Engineering College (Thiruvallur)"
-   },
-   {
-     "college":"R.M.K. Engineering College (Kavaripettai)"
-   },
-   {
-     "college":"Rajagiri School Of Engineering & Technology (Ernakulam)"
-   },
-   {
-     "college":"Rajarambapu Institute Of Technology (Sangli)"
-   },
-   {
-     "college":"Rungta College Of Engineering And Technology (Bhilai)"
-   },
-   {
-     "college":"S.A. Engineering College (Chennai)"
-   },
-   {
-     "college":"SCMS School Of Engineering & Technology (Ernakulam)"
-   },
-   {
-     "college":"SDM College Of Engineering & Technology (Dharwad)"
-   },
-   {
-     "college":"SRM Engineering College (Chennai)"
-   },
-   {
-     "college":"SVKM's NMIMS-Mukesh Patel School Of Technology Management & Engineering (Mumbai)"
-   },
-   {
-     "college":"Sanjivani Rural Education Society's College Of Engineering (Ahmednagar)"
-   },
-   {
-     "college":"Shri Ramdeobaba College Of Engineering And Management (Nagpur)"
-   },
-   {
-     "college":"Shri Shankaracharya Technical Campus Bhilai (Bhilai)"
-   },
-   {
-     "college":"Shri Vishnu Engineering College For Women (Bhimavaram)"
-   },
-   {
-     "college":"Sikkim Manipal Institute Of Technology (Sikkim)"
-   },
-   {
-     "college":"Sir M Visvesvaraya Institute Of Technology (Bangalore)"
-   },
-   {
-     "college":"Sri Sairam College of Engineering (Bangalore)"
-   },
-   {
-     "college":"Sri Sairam Engineering College (Chennai)"
-   },
-   {
-     "college":"Sri Sivasubramaniya Nadar College of Engineering (Kalavakkam)"
-   },
-   {
-     "college":"Symbiosis Institute Of Technology (Pune)"
-   },
-   {
-     "college":"Thapar University (Patiala)"
-   },
-   {
-     "college":"The National Institute Of Engineering (Mysore)"
-   },
-   {
-     "college":"The Northcap University (Gurgaon)"
-   },
-   {
-     "college":"Thiagarajar College Of Engineering (Madurai)"
-   },
-   {
-     "college":"University College Of Engineering (Hyderabad)"
-   },
-   {
-     "college":"University Institute Of Engineering & Technology, Panjab University (Chandigarh)"
-   },
-   {
-     "college":"University Institute Of Engineering, Chandigarh University (Chandigarh)"
-   },
-   {
-     "college":"VIT University (Vellore)"
-   },
-   {
-     "college":"Veltech High Tech Dr .Rangarajan Dr. Sakunthala Engineering College (Chennai)"
-   },
-   {
-     "college":"Vishwakarma Institute of Technology (Pune)"
-   },
-   {
-     "college":"Visvesvaraya National Institute Of Technology (Nagpur)"
-   },
-   {
-     "college":"Zakir Husain College Of Engineering & Technology, Aligarh (Aligarh)"
-   }
+{
+  "clg": [
+  "Indian Business Academy",
+  "Indian Institute of Foreign Trade",
+  "Indian Institute of Information Management",
+  "Indian Institute of Information Technology",
+  "Indian Institute of Information Technology - IIIT Allahabad",
+  "Indian Institute of Information Technology - IIIT Bangalore",
+  "Indian Institute of Information Technology - IIIT Hyderabad",
+  "Indian Institute of Information Technology - IIIT Kolkata",
+  "Indian Institute of Information Technology - IIIT Pune",
+  "Indian Institute of Information Technology Jabalpur",
+  "Indian Institute of Information Technology and Management - Kerala",
+  "Indian Institute of Information Technology and Management",
+  "Indian Institute of Management",
+  "Indian Institute of Rural Management",
+  "Indian Institute of Science",
+  "Indian Institute of Science and Information Technology",
+  "Indian Institute of Science - IISc Bangalore",
+  "Indian Institute of Science Education and Research Pune",
+  "Indian Institute of Space Science and Technology",
+  "Indian Institute of Social Welfare and Business Management",
+  "Indian Institute of Technology - IIT Bhubaneswar",
+  "Indian Institute of Technology - IIT Bombay",
+  "Indian Institute of Technology - IIT Delhi",
+  "Indian Institute of Technology - IIT Guwahati",
+  "Indian Institute of Technology - IIT Kanpur",
+  "Indian Institute of Technology - IIT Kharagpur",
+  "Indian Institute of Technology - IIT Madras",
+  "Indian Institute of Technology - IIT Powaii",
+  "Indian Institute of Technology - IIT Roorkee",
+  "Indian Institute of Technology - IIT Patna",
+  "Indian Institute of Technology - IIT Ropar",
+  "Indian Institute of Technology - IIT Hyderabad",
+  "Indian Institute of Technology - IIT Gandhinagar",
+  "Indian Institute of Technology - IIT Rajasthan",
+  "Indian Institute of Technology - IIT Mandi",
+  "Indian Institute of Technology - IIT Indore",
+  "Indian Institute of Technology - IIT BHU",
+  "Indian School of Business",
+  "Indian School of Mines - Dhanbad",
+  "Kings Engineering College",
+  "K.I.T College Of Engineering",
+  "Koneru Lakshmaiah College of Engineering",
+  "Mallabhum Institute of Technology",
+  "Malnad College of Engineering",
+  "Malout Institute of Management and Information Technology",
+  "Management Development Institute",
+  "Management Education and Research Institute",
+  "Manav Rachna College of Engineering",
+  "Mandsaur Institute of Technology",
+  "Mangalmay Institute of Management and Technology",
+  "Mangalore University",
+  "Mangalore Institiute of Technology and Engineering",
+  "Manipal Academy of Higher Education",
+  "Manipur University",
+  "Manjara Charitable Trust Rajiv Gandhi Institute of Technology",
+  "Manonmaniam Sundaranar University",
+  "Mar Athanasius College of Engineering",
+  "Mar Thoma Institute of Information Technology - MIIT",
+  "Marathwada Institute of Technology Bulandshahr",
+  "Marathwada Krishi Vidyapeeth",
+  "Marathwada Mitra Mandal College of Engineering",
+  "Marian Engineering College",
+  "Marine Engineering College - MERI",
+  "Marudhar Engineering College",
+  "Matrusri Institute of Post Graduate Studies",
+  "Maulana Azad College",
+  "Maulana Azad College",
+  "Maulana Azad National Institute of Technology",
+  "Medicaps Institute of Technology and Management",
+  "Meenakshi College for Women",
+  "Meenakshi Sundararajan Engineering College",
+  "Meerut Institute of Engineering and Technology",
+  "Meghnad Saha Institute of Technology",
+  "Mepco Schlenk Engineering College",
+  "Military College of Telecommunication Engineering",
+  "Misrimal Navajee Munoth Jain Engineering College",
+  "Mizoram University",
+  "Model Institute of Engineering and Technology",
+  "Model Engineering College",
+  "Modi Institute of Technology",
+  "Mody Institute of Technology and Science",
+  "Mohamed Sathak A.J. College of Engineering",
+  "Mohan Lal Sukhadia University",
+  "Mohandas College of Engineering and Technology",
+  "Mohanlal Sukhadia University - MLSU",
+  "Mona College of Engineering and Technology",
+  "Moolji Jaitha College",
+  "Mother Teresa Institute of Management",
+  "Motilal Nehru National Institute of Technology",
+  "Mount Carmel College",
+  "Mudra Institute of Communications",
+  "Muffakham Jah College of Engineering and Technology",
+  "Mugniram Bangur Memorial Engineering College",
+  "Mukesh Patel School of Technology Management and Engineering",
+  "Mumbai Educational Trust (MET)",
+  "Munnar Engineering College",
+  "Murshidabad College of Engineering and Technology",
+  "Mysore Medical College &amp; Research Institute",
+  "NBKR Institute of Science and Technology",
+  "NERIST",
+  "NLCPAS Navsari",
+  "NMAM Institute of Technology",
+  "NMKRV College",
+  "NRI Institute of Information",
+  "NRI Institute of Technology",
+  "NTR University of Health Sciences Andhra Pradesh",
+  "Nadar Mahajana Sangam S.Vellaichamy Nadar College",
+  "Nagaland University",
+  "Nagarjuna College of Engineering and Technology",
+  "Nagarjuna University",
+  "Nagpur University",
+  "Nalanda Institute of Engineering and Technology",
+  "Nalanda Khula Vishwavidyalaya",
+  "Nalla Malla Reddy Engineering College",
+  "Nallamuthu Gounder Mahalingam College",
+  "Nandha Engineering College - Erode",
+  "Narasu Sarathy Institute of Technology",
+  "Narayana Engineering College",
+  "Narendra Deva University of Agriculture and Technology",
+  "Nargund College of Pharmacy",
+  "Narmada College of Computer Application",
+  "Narsee Monjee Institute of Management and Higher Studies",
+  "Narula Institute of Technology",
+  "National Academy of Legal Studies and Research University",
+  "National Dairy Research Institute",
+  "National Engineering College",
+  "National Institute of Construction Management and Research",
+  "National Institute of Cooperative Management",
+  "National Institute of Design",
+  "National Institute of Engineering",
+  "National Institute of Engineering (NIE) Mysore",
+  "National Institute of Fashion Technology",
+  "National Institute of Industrial Engineering",
+  "National Institute of Information Technology",
+  "National Institute of Mental Health and Neuro Sciences",
+  "National Institute of Pharmaceutical Education and Research",
+  "National Institute of Science and Technology",
+  "National Institute of Technology Calicut (NITC)",
+  "National Institute of Technology Durgapur (NITD)",
+  "National Institute of Technology Hamirpur (NITH)",
+  "National Institute of Technology Karnataka ",
+  "National Institute of Technology Kurukshetra (NITK)",
+  "National Institute of Technology Meghalaya (NITM)",
+  "National Institute of Technology Silchar (NITS)",
+  "National Institute of Technology Warangal (NITW)",
+  "National Institute of Technology Trichy (NITT)",
+  "National Institute of Technology Patna (NITP)",
+  "National Insurance Academy (NIA)",
+  "National Law Institute University",
+  "National Law School of India University",
+  "National Law University",
+  "Nehru College of Management",
+  "Nelson Marlborough Institute of Technology",
+  "Netaji Subhas Institute of Technology - Delhi",
+  "Netaji Subhas Open University",
+  "Netaji Subhash Engineering College - NSEC",
+  "Neville Wadia Institute of Management Studies and Research",
+  "New Horizon College of Engineering",
+  "Nirma Institute of Technology",
+  "Nirma University of Science and Technology",
+  "Nishitha College of Engineering and Technology",
+  "Nishitha PG College",
+  "Nitte Meenakshi Institute of Technology",
+  "Nizams Institute of Medical Sciences",
+  "Noble Institute of Science and Technology",
+  "Noida Institute Of Enginnering And Technology",
+  "Noorul Islam College of Engineering",
+  "Nootan Sarva Vidyalaya Sanchalit MCA College",
+  "Vishwakarma Institute of Technology",
+  "Visva-Bharati",
+  "Visvesvaraya National Institute of Technology",
+  "Nehru Institute OF Engineering & Technology"
 ]
+}

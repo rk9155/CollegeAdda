@@ -160,8 +160,8 @@
         $('[name="sub_type"]').val(sub_type);
 
         $.getJSON('../State_City.json', function (data) {
-            data.forEach((clg_name) => {
-                $('#state').append(`<option value='${clg_name.college}'>${clg_name.college}</option>`)
+            data.clg.forEach((clg_name) => {
+                $('#state').append(`<option value='${clg_name}'>${clg_name}</option>`)
 
             });
         });
@@ -177,10 +177,6 @@
                 }
             });     
         });
-
-
-        
-
     </script>
 </body>
 
