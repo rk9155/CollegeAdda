@@ -39,18 +39,20 @@ router.post('/', upload, function (req, res, next) {
     const owner_name = req.body.owner_name;
     const owner_mob = req.body.owner_mob;
     const owner_email = req.body.owner_email;
+    const owner_image = req.user.picture;
     const price = req.body.price;
     const state = req.body.state;
     const city = req.body.city;
     const description = req.body.description;
     const college_name = req.body.college_name;
     const uploasProduct = new productUpload({
-        title: title,
+        title: title.trim(),
         type: type,
         sub_type: sub_type,
         owner_name: owner_name,
         owner_mob: owner_mob,
         owner_email: owner_email,
+        owner_image: owner_image,
         price: price,
         state: state,
         city: city,

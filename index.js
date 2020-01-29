@@ -15,23 +15,28 @@ const keys = require('./config/keys');
 app.use(express.static('./views'));
 
 app.use(cookieSession({
-    maxAge: 24*60*60*1000,
+    maxAge: 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey1, keys.cookieKey2, keys.cookieKey3]
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.set('view engine','ejs');
+app.get('/', (req, res) => {
+    res.render('home2', {
+        user: req.user ? req.user : ""
+    });
+})
+
+app.set('view engine', 'ejs');
 app.use(express.static('./Template'));
-app.use(express.static('./Template/uploads'));
-app.use('/', home);
+app.use('/products', home);
 app.use('/post', post);
 app.use('/image', image);
 app.use('/upload', upload);
-app.use('/items' , items);
-app.use('/auth' , auth);
-app.use('/api/', loggedInUser);
+app.use('/items', items);
+app.use('/auth', auth);
+app.use('/api', loggedInUser);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
