@@ -1,776 +1,507 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/jquery.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/06905c285a.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
+	<title>Electro - HTML Ecommerce Template</title>
 
+	<!-- Google font -->
+	<!-- Bootstrap -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <style>
-        /* SPinner  */
-        .body {
-            display: none;
-        }
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
-        .lds-hourglass {
-            z-index: 5000;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #969696;
-        }
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
-        .lds-hourglass:after {
-            content: " ";
-            display: block;
-            border-radius: 50%;
-            width: 0;
-            height: 0;
-            margin: 8px;
-            box-sizing: border-box;
-            border: 32px solid #fff;
-            border-color: #fff transparent #fff transparent;
-            animation: lds-hourglass 1.2s infinite;
-        }
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
 
-        @keyframes lds-hourglass {
-            0% {
-                transform: rotate(0);
-                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-            }
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="css/font-awesome.min.css">
 
-            50% {
-                transform: rotate(900deg);
-                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-            }
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-            100% {
-                transform: rotate(1800deg);
-            }
-        }
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
-        /* Spinner close */
 
+	<script>
+		
+	</script>
 
-        body {
-            background: #F1F3F8;
-            font-family: 'Roboto', sans-serif;
-
-        }
-
-        .login-button:hover {
-            background-color: rgb(54, 50, 88);
-        }
-
-        .login-button {
-            font-size: 1.2em;
-            padding: 3px;
-        }
-
-        .sell-button:hover {
-            background-color: #ff8d1e;
-        }
-
-        .sell-button {
-            background-color: #ff8d1e;
-            font-size: 1.2em;
-            padding: 3px;
-        }
-
-        #search {
-            padding: 5px;
-            border: none;
-            background-color: rgb(39, 36, 67);
-            border-bottom: 1.5px solid #ff8d1e;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        #search:focus {
-            outline: none;
-        }
-
-        .all-categories {
-            font-size: 14px;
-            background-color: #ff8d1e;
-            cursor: pointer;
-        }
-
-        .main-category:hover {
-            background-color: #EBEDF7;
-        }
-
-        .item-types:hover,
-        .item-types:focus {
-            background-color: #ff8d1e;
-            color: #fff !important;
-        }
-
-        .item-category:hover,
-        .item-category:focus {
-            background-color: #ff8d1e;
-            color: #fff !important;
-        }
-
-        .active-item {
-            background-color: #ff8d1e;
-            color: #fff !important;
-        }
-
-        .active-category {
-            background-color: #ff8d1e;
-            color: #fff !important;
-        }
-
-        .avatar {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media only screen and (max-width: 720px) {
-            .login-sell-btn {
-                margin-right: auto;
-            }
-
-            #hide-add {
-                display: none;
-            }
-        }
-
-        /*==================== 
-	Footer 
-====================== */
-
-        /* Main Footer */
-        footer .main-footer {
-            padding: 20px 0;
-            background: #252525;
-        }
-
-        footer ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        /* Copy Right Footer */
-        .footer-copyright {
-            background: #222;
-            padding: 5px 0;
-        }
-
-        .footer-copyright .logo {
-            display: inherit;
-        }
-
-        .footer-copyright nav {
-            float: right;
-            margin-top: 5px;
-        }
-
-        .footer-copyright nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .footer-copyright nav ul li {
-            border-left: 1px solid #505050;
-            display: inline-block;
-            line-height: 12px;
-            margin: 0;
-            padding: 0 8px;
-        }
-
-        .footer-copyright nav ul li a {
-            color: #969696;
-        }
-
-        .footer-copyright nav ul li:first-child {
-            border: medium none;
-            padding-left: 0;
-        }
-
-        .footer-copyright p {
-            color: #969696;
-            margin: 2px 0 0;
-        }
-
-        /* Footer Top */
-        .footer-top {
-            background: #252525;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #222;
-        }
-
-        /* Footer transparent */
-        footer.transparent .footer-top,
-        footer.transparent .main-footer {
-            background: transparent;
-        }
-
-        footer.transparent .footer-copyright {
-            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer light */
-        footer.light .footer-top {
-            background: #f9f9f9;
-        }
-
-        footer.light .main-footer {
-            background: #f9f9f9;
-        }
-
-        footer.light .footer-copyright {
-            background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
-        }
-
-        /* Footer 4 */
-        .footer- .logo {
-            display: inline-block;
-        }
-
-        /*==================== 
-	Widgets 
-====================== */
-        .widget {
-            padding: 20px;
-            margin-bottom: 40px;
-        }
-
-        .widget.widget-last {
-            margin-bottom: 0px;
-        }
-
-        .widget.no-box {
-            padding: 0;
-            background-color: transparent;
-            margin-bottom: 40px;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            -ms-box-shadow: none;
-            -o-box-shadow: none;
-        }
-
-        .widget.subscribe p {
-            margin-bottom: 18px;
-        }
-
-        .widget li a {
-            color: #ff8d1e;
-        }
-
-        .widget li a:hover {
-            color: #4b92dc;
-        }
-
-        .widget-title {
-            margin-bottom: 20px;
-        }
-
-        .widget-title span {
-            background: #839FAD none repeat scroll 0 0;
-            display: block;
-            height: 1px;
-            margin-top: 25px;
-            position: relative;
-            width: 20%;
-        }
-
-        .widget-title span::after {
-            background: inherit;
-            content: "";
-            height: inherit;
-            position: absolute;
-            top: -4px;
-            width: 50%;
-        }
-
-        .widget-title.text-center span,
-        .widget-title.text-center span::after {
-            margin-left: auto;
-            margin-right: auto;
-            left: 0;
-            right: 0;
-        }
-
-        .widget .badge {
-            float: right;
-            background: #7f7f7f;
-        }
-
-        .typo-light h1,
-        .typo-light h2,
-        .typo-light h3,
-        .typo-light h4,
-        .typo-light h5,
-        .typo-light h6,
-        .typo-light p,
-        .typo-light div,
-        .typo-light span,
-        .typo-light small {
-            color: #fff;
-        }
-
-        ul.social-footer2 {
-            margin: 0;
-            padding: 0;
-            width: auto;
-        }
-
-        ul.social-footer2 li {
-            display: inline-block;
-            padding: 0;
-        }
-
-        ul.social-footer2 li a:hover {
-            background-color: #ff8d1e;
-        }
-
-        ul.social-footer2 li a {
-            display: block;
-            height: 30px;
-            width: 30px;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: #ff8d1e;
-            color: #fff;
-        }
-
-        .btn:hover,
-        .btn:focus,
-        .btn.active {
-            background: #4b92dc;
-            color: #fff;
-            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            -webkit-transition: all 250ms ease-in-out 0s;
-            -moz-transition: all 250ms ease-in-out 0s;
-            -ms-transition: all 250ms ease-in-out 0s;
-            -o-transition: all 250ms ease-in-out 0s;
-            transition: all 250ms ease-in-out 0s;
-
-        }
-
-        .card {
-            cursor: pointer;
-        }
-
-        .dropdown-toggle::after {
-            content: none;
-        }
-
-        #searchResult {
-            overflow-y: scroll;
-            height: 200px;
-            display: none;
-            position: relative;
-        }
-
-        #searchResult::-webkit-scrollbar {
-            width: 0px;
-        }
-
-        .searched {
-            cursor: pointer;
-        }
-
-        .searched:hover {
-            background-color: #4b92dc;
-            color: #fff !important;
-        }
-    </style>
 </head>
 
-<body onload="splash(2000)">
-    <div class="splash" style="border-radius: 50%;">
-        <div class="lds-hourglass"></div>
-    </div>
+<body>
+	<a class="float post-add" <% if( user != ""){%> href="/post/add">
+		<%}else{%>
+			href="/auth/google">
+		<%}%>SELL</a>
+	<!-- HEADER -->
+	<header>
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<ul class="header-links pull-left">
+					<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+				</ul>
+				<ul class="header-links pull-right">
+					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+					<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /TOP HEADER -->
 
-    <div class='body'>
-        <div style="width: 100%;">
-            <div class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color: rgb(39, 36, 67);">
-                <a class="navbar-brand text-center col-md-2 col-12" style="font-size: 25px;font-weight: bolder;"
-                    href="">COLLEGE ADDA</a>
-                <div class="search-bar ml-auto mr-auto col-xs-12 col-md-3">
-                    <input type="text" class="col-12" id="search" placeholder="Search by College Name"><br>
-                    <ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult">
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<img src="./img/logo.png" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
 
-                    </ul>
-                </div>
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<select class="input-select">
+									<option value="0">All Categories</option>
+									<option value="1">Category 01</option>
+									<option value="1">Category 02</option>
+								</select>
+								<input class="input" placeholder="Search here">
+								<button class="search-btn">Search</button>
+							</form>
+						</div>
+					</div>
+					<!-- /SEARCH BAR -->
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- <div class="dropdown avatara">
+								<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<img src="<%=user.picture%>" class=""
+										alt="avatar image" height="40">
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="/api/logout"><i
+											class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+								</div>
+							</div> -->
+							<!-- Wishlist -->
+							<!-- <div>
+								<a class="login-button" href="/auth/google">
+									<i class="fa fa-google"></i>
+									<span>Login</span>
+								</a>
+							</div> -->
+							<!-- /Wishlist -->
+
+							<!-- Cart -->
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-heart-o"></i>
+									<span>Your Wishlist</span>
+									<div class="qty">3</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list">
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/product01.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/product02.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+									</div>
+									<div class="cart-summary">
+										<small>3 Item(s) selected</small>
+										<h5>SUBTOTAL: $2940.00</h5>
+									</div>
+									<div class="cart-btns">
+										<a href="#">View Cart</a>
+										<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-heart-o"></i>
+									<span>Your Wishlist</span>
+									<div class="qty">3</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list">
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/product01.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="./img/product02.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+									</div>
+									<div class="cart-summary">
+										<small>3 Item(s) selected</small>
+										<h5>SUBTOTAL: $2940.00</h5>
+									</div>
+									<div class="cart-btns">
+										<a href="#">View Cart</a>
+										<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- /Cart -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
+					</div>
+					<!-- /ACCOUNT -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+	<div class="content">
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Hot Deals</a></li>
+						<li><a href="#">Categories</a></li>
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Smartphones</a></li>
+						<li><a href="#">Cameras</a></li>
+						<li><a href="#">Accessories</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop01.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Laptop<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop03.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Accessories<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop02.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Cameras<br>Collection</h3>
+								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- SECTION -->
+		<div class="section" id="products">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">New Products</h3>
+							<div class="section-nav">
+								<ul class="section-tab-nav tab-nav">
+									<li class="active"><a href="#products" class="all-categories">All</a></li>
+									<li><a href="#products" class="main-category" id="MOBILE">Mobiles</a></li>
+									<li><a href="#products" class="main-category" id="LAPTOP">Laptops</a></li>
+									<li><a href="#products" class="main-category" id="BOOK">Books</a></li>
+									<li><a href="#products" class="main-category" id="STATIONARY">Stationary</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- store products -->
+					<div class="row store-products" style="margin-right: 0px; margin-left: 0px;">
+						<!-- product -->
+
+						<!-- /product -->
+					</div>
+					<!-- /store products -->
+
+					<!-- store bottom filter -->
+					<div class="store-filter clearfix p-5">
+						<span class="store-qty">Showing 20-100 products</span>
+						<ul class="store-pagination">
+							<li class="active">1</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+						</ul>
+					</div>
+					<!-- /store bottom filter -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /HOT DEAL SECTION -->
+
+	</div>
+
+	<!-- NEWSLETTER -->
+	<div id="newsletter" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="newsletter">
+						<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+						<form>
+							<input class="input" type="email" placeholder="Enter Your Email">
+							<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+						</form>
+						<ul class="newsletter-follow">
+							<li>
+								<a href="#"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NEWSLETTER -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">About Us</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+								incididunt ut.</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Categories</h3>
+							<ul class="footer-links">
+								<li><a href="#">Hot deals</a></li>
+								<li><a href="#">Laptops</a></li>
+								<li><a href="#">Smartphones</a></li>
+								<li><a href="#">Cameras</a></li>
+								<li><a href="#">Accessories</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Information</h3>
+							<ul class="footer-links">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Orders and Returns</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Service</h3>
+							<ul class="footer-links">
+								<li><a href="#">My Account</a></li>
+								<li><a href="#">View Cart</a></li>
+								<li><a href="#">Wishlist</a></li>
+								<li><a href="#">Track My Order</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
+
+		<!-- bottom footer -->
+		<div id="bottom-footer" class="section">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-payments">
+							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+						</ul>
+						<span class="copyright">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+							template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+								href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</span>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bottom footer -->
+	</footer>
+	<!-- /FOOTER -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/script.js"></script>
 
 
-
-                <div class="row col-12 col-md-3 ml-auto text-center login-sell-btn">
-                    <div class="nav-item dropdown avatar ml-auto mr-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="<%=user.picture%>" class="rounded-circle z-depth-0 mr-auto ml-auto"
-                                alt="avatar image" height="40">
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/api/logout"><i
-                                    class="fas fa-sign-out-alt mr-2"></i>Logout</a>
-                        </div>
-                    </div>
-                    <div class=" active col-6 logged-in ml-auto mr-auto">
-                        <a class="nav-link btn login-button" href="/auth/google">Login
-                            <i class="fab fa-google-plus-g"></i>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </div>
-                    <div class="active col-6 ml-auto mr-auto">
-                        <a class="nav-link btn sell-button" style="color: #fff;" <% if( user != ""){%> href="/post/add">
-                            <%}else{%>
-                            type="button" data-toggle="modal" data-target="#exampleModal">
-                            <%}%>
-
-                        Sell
-                        <i class="fas fa-camera ml-2"></i>
-                    </a>
-                      
-                      <!--Sign in Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Login </h5>
-                              <button type="button" class="close" data-dismiss="modal" style="background-color: #4b92dc;" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <a href="/auth/google" type="button" class="btn btn-gplus w-50" style="background-color: #c32f10;color: #fff;"><i class="fab fa-google-plus-g pr-1"></i> Google +</a href="/auth/google" >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-
-            
-
-        </div>
-
-        <br>
-        <div class="mb-1 navbar navbar-expand-lg navbar-dark"
-            style="background-color: #fff;padding: 0px;">
-            <div class="container col-md-10" style="border-bottom: 2px solid #ff8d1e; padding-bottom: 0px;">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false"
-                    aria-label="Toggle navigation" style="background-color: #ff8d1e;">
-                    <span class="navbar-toggler-icon" style="color: #fff;"></span>
-                </button>
-
-                <div class="collapse navbar-collapse text-center" id="basicExampleNav">
-
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link all-categories ">
-                                <i class="fas fa-align-left mr-2"></i>
-                                All Categories
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">MOBILE</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">LAPTOP</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">CYCLES</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">MOTERCYCLE</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">BOOKS</a></li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">NOTES</a></li>
-                        <li class="nav-item"><a class="nav-link main-category" style="color: rgb(39, 36, 67);"
-                                href="">STATIONARY</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <div class="container col-md-10">
-    
-        <h3 style="color: rgb(39, 36, 67);font-weight: bold;">Featured Products</h3><br>
-        
-        <div class="type-item-image col-md-12   " style="padding:5px 0px 20px 0px;">
-
-            <div class="row products">
-
-            </div>
-            <button class=" btn ml-auto mr-auto moreProduct">
-                Show More
-            </button>
-        </div>
-    </div>
-
-    <footer id="footer" class="footer-1">
-        <div class="main-footer widgets-dark typo-light">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-6 col-sm-6 col-md-4">
-                        <div class="widget no-box">
-                            <h5 class="widget-title">Quick Links<span></span></h5>
-                            <ul class="thumbnail-widget">
-                                <li>
-                                    <div class="thumb-content"><a href="#.">Get Started</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">Top Leaders</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">Success Stories</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">Event/Tickets</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">News</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">Lifestyle</a></div>
-                                </li>
-                                <li>
-                                    <div class="thumb-content"><a href="#.">About</a></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-sm-6 col-md-4">
-                        <div class="widget no-box">
-                            <h5 class="widget-title">Help Us<span></span></h5>
-                            <p>Please Share your valuable feedback with us.</p>
-                            <a class="btn" href="mailto:yashjanoria999@gmail.com" target="_blank">Feedback</a>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-
-                        <div class="widget no-box">
-                            <h5 class="widget-title">COLLEGE ADDA<span></span></h5>
-                            <p><i class="fas fa-phone-alt mr-2"></i> (+91) 123 456 7890</p>
-                            <p><i class="fas fa-envelope mr-3"></i>college_adda@nitp.ac.in</p>
-                            <p><i class="fas fa-map-marker-alt mr-3"></i>National Institute of Technology Patna
-                                Patna, Bihar (800005), India</p>
-                            <ul class="social-footer2">
-                                <li class=""><a title="youtube" target="_blank" href="https://www.youtube.com/"><img
-                                            alt="youtube" width="30" height="30"
-                                            src="data:image/png;base64,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"></a>
-                                </li>
-                                <li class=""><a href="https://www.facebook.com/" target="_blank"
-                                        title="Facebook"><img alt="Facebook" width="30" height="30"
-                                            src="data:image/png;base64,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"></a>
-                                </li>
-                                <li class=""><a href="https://twitter.com" target="_blank" title="Twitter"><img
-                                            alt="Twitter" width="30" height="30"
-                                            src="data:image/png;base64,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"></a>
-                                </li>
-                                <li class=""><a title="instagram" target="_blank"
-                                        href="https://www.instagram.com/"><img alt="instagram" width="30"
-                                            height="30"
-                                            src="data:image/png;base64,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"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Copyright College Adda © 2020. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </footer>
-
-    <script>
-
-        function splash(param) {
-            var time = param;
-            setTimeout(function () {
-                $('.splash').hide();
-                $('.body').show();
-            }, time);
-        }
-
-
-
-        $(document).ready(getAllProducts())
-        function getAllProducts() {
-            $.get('/products/all', function (product) {
-                if (product.length != 0) {
-                    $('.products').html('');
-                    product.forEach((prod_deta) => {
-                        $('.products').append(`<div class="card col-6 col-md-3 col-lg-3 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
-                            <img class="card-img-top" src="/image/${prod_deta.image[0]}" alt="Product Image"
-                                style="padding: 10px 30px;height: 170px;" />
-                            <div class="card-body" style="padding: 2px;">
-                                <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ ${prod_deta.price}
-                                </p>
-                                <p class="card-text prod-title" style="font-size: small;">${prod_deta.title}
-                                </p>
-                            </div>  
-                        </div>`
-                        )
-                        $('.card').on('click', function () {
-                            const title = $(this).find('.prod-title').text();
-                            window.location.href = '/items/' + title;
-                        });
-                    })
-                }
-                else {
-                    $('.products').html('Oops nothing to be sold');
-                }
-
-            })
-        }
-
-        $('.all-categories').click(function (e) {
-            e.preventDefault();
-            getAllProducts();
-        })
-
-        $('.main-category').click(function (e) {
-            e.preventDefault();
-            let link = $(this).text().replace(/ /g, '%20');
-            $.get('/products/category/' + link, function (product) {
-                if (product.length != 0) {
-                    $('.products').html('');
-                    product.forEach((prod_deta) => {
-                        $('.products').append(`<div class="card col-6 col-md-3 col-lg-3 col-sm-4" style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
-                            <img class="card-img-top" src="/image/${prod_deta.image[0]}" alt="Product Image"
-                                style="padding: 10px 30px;height: 170px;" />
-                            <div class="card-body" style="padding: 2px;">
-                                <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹ ${prod_deta.price}
-                                </p>
-                                <p class="card-text prod-title" style="font-size: small;">${prod_deta.title}
-                                </p>
-                            </div>  
-                        </div>`
-                        )
-                        $('.card').on('click', function () {
-                            const title = $(this).find('.prod-title').text();
-                            window.location.href = '/items/' + title;
-                        });
-                    })
-                }
-                else {
-                    $('.products').html('Oops nothing to be sold in ' + $(this).text() + ' category');
-                }
-
-            })
-        });
-
-
-        if ("<%=user.picture%>" != "") {
-            $('.logged-in').hide();
-            $('.avatar').show();
-            $('.sell-button').addClass('mt-2');
-        }
-
-
-        $('#search').on('keyup', function (e) {
-            if (e.keyCode == 39) {
-                $(".searched:hover").next().focus();
-
-            }
-            if (e.keyCode == 37) {
-                $(".searched:focus").prev().focus();
-
-            }
-
-            $('#searchResult').html(``);
-            $('#searchResult').show();
-            let searchData = $(this).val();
-            let newReg = new RegExp(searchData, "i");
-            $.getJSON('./State_City.json', function (data) {
-                data.clg.forEach((clg_name) => {
-                    if (clg_name.search(newReg) != -1) {
-                        $('#searchResult').append(`<li class="list-group-item searched">${clg_name}</li>`);
-                        $('.searched').click(function () {
-                            let link = $(this).text().replace(/ /g, '%20');
-                            $.get('/products/search/' + link, function (product) {
-                                if (product.length != 0) {
-                                    $('.products').html('');
-                                    product.forEach((prod_deta) => {
-                                        $('.products').append(`<div class="card col-6 col-md-3 col-lg-3 col-sm-4"
-                                style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
-                                <img class="card-img-top" src="/image/${prod_deta.image[0]}" alt="Product Image"
-                                    style="padding: 10px 30px;height: 170px;" />
-                                <div class="card-body" style="padding: 2px;">
-                                    <p class="card-text" stlye="font-size: large;font-weight: bolder;">₹
-                                        ${prod_deta.price}
-                                    </p>
-                                    <p class="card-text prod-title" style="font-size: small;">${prod_deta.title}
-                                    </p>
-                                </div>
-                            </div>`
-                                        )
-                                        $('.card').on('click', function () {
-                                            const title = $(this).find('.prod-title').text();
-                                            window.location.href = '/items/' + title;
-                                        });
-                                    })
-                                }
-                                else {
-                                    $('.products').html('Oops nothing to be sold in your college');
-                                }
-
-                            })
-                        });
-                    }
-                    if (searchData == '') {
-                        $('#searchResult').html(``);
-                        $('#searchResult').hide();
-                    }
-                });
-            });
-        });
-        $('#search').focusout(function (e) {
-            setTimeout(() => {
-                $('#searchResult').hide();
-            }, 500);
-        });
-        $('#search').on('focus', function (e) {
-            $('#searchResult').show();
-        });
-
-    </script>
 </body>
 
 </html>

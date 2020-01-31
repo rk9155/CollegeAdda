@@ -3,10 +3,12 @@ const router = express.Router();
 const products = require('../Models/product');
 
 
-router.get('/all', (req, res) => {
+router.get('/category/:limit', (req, res) => {
+    let limit = parseInt(req.params.limit);
     async function getProducts() {
         const product = await products.find({ })
-            .sort({ date: 1 })
+            .sort({ date: -1 })
+            .limit(limit)
         if (product != null) {
             res.json(product);
         }
@@ -19,6 +21,7 @@ router.get('/all', (req, res) => {
     getProducts();
 });
 router.get('/search/:search', (req, res) => {
+    
     async function getProducts() {
         const product = await products.find({ college_name: req.params.search })
             .sort({ date: 1 })
@@ -33,10 +36,12 @@ router.get('/search/:search', (req, res) => {
 
     getProducts();
 });
-router.get('/category/:category', (req, res) => {
+router.get('/category/:category/:limit', (req, res) => {
+    let limit = parseInt(req.params.limit);
     async function getProducts() {
         const product = await products.find({ sub_type: req.params.category })
             .sort({ date: 1 })
+            .limit(limit)
         if (product != null) {
             res.json(product);
         }

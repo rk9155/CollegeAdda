@@ -11,7 +11,7 @@ router.get('/:title' , async (req,res) =>{
     async function getProducts(){
         const product = await products.find({title: title}).limit(1);
         if(product[0] != null){
-            res.render('sell_item', {
+            res.render('product', {
                 product: product[0],
                 user: req.user
             });
