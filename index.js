@@ -28,6 +28,12 @@ app.get('/', (req, res) => {
     });
 })
 
+app.get('/store', (req , res)=>{
+    res.render('store', {
+        user: req.user ? req.user : ""
+    });
+})
+
 app.set('view engine', 'ejs');
 app.use(express.static('./Template'));
 app.use('/products', home);
