@@ -130,10 +130,6 @@
 										<small>3 Item(s) selected</small>
 										<h5>SUBTOTAL: $2940.00</h5>
 									</div>
-									<div class="cart-btns">
-										<a href="#">View Cart</a>
-										<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-									</div>
 								</div>
 							</div>
 							<!-- /Wishlist -->
@@ -167,13 +163,11 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="/">Home</a></li>
-						<li><a href="#products">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li id="home"><a href="/">Home</a></li>
+						<li id="store"><a href="/store">Store</a></li>
+						<li id="products"><a href="/#products">Hot Deals</a></li>
+						<li id="categories"><a href="#">Categories</a></li>	
+						<li id="contact"><a href="#newsletter">Contact us</a></li>	
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -470,6 +464,8 @@
 			$('#profile').hide();
 			$('#wishlist').hide();
 		}
+
+		$('#home').addClass('active')
 	</script>
 
 

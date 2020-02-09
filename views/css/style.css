@@ -610,14 +610,20 @@ textarea.input {
   -webkit-box-shadow: 0px 0px 0px 2px #E4E7ED;
   box-shadow: 0px 0px 0px 2px #E4E7ED;
   z-index: 99;
-  right: 0;
   opacity: 0;
+  right: 0;
   visibility: hidden;
 }
 
 .dropdown.open>.cart-dropdown {
   opacity: 1;
-  visibility: visible;
+  visibility: visible
+}
+
+@media only screen and (max-width: 700px){
+  .cart-dropdown {
+    right: -100%
+  }
 }
 
 .cart-dropdown .cart-list {
@@ -1492,6 +1498,11 @@ textarea.input {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 12px;
+}
+@media only screen and (max-width: 700px) {
+  #aside{
+    display: none;
+  }
 }
 
 /*=========================================================
