@@ -6,10 +6,10 @@ const ejs = require('ejs');
 
 
 
-router.get('/:title' , async (req,res) =>{
-    const title = req.params.title;
+router.get('/:_id' , async (req,res) =>{
+    const id = req.params._id;
     async function getProducts(){
-        const product = await products.find({title: title}).limit(1);
+        const product = await products.find({_id: id}).limit(1);
         if(product[0] != null){
             res.render('product', {
                 product: product[0],

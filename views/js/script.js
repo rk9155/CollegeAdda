@@ -12,12 +12,14 @@ function getProducts(link, limit) {
             $('.store-products').html('');
             product.forEach((prod_deta) => {
 				var prod_title = prod_deta.title;
+				var prod_id = prod_deta._id
 				if($(document).width() < 700){
 					if(prod_title.length > 17)
 						prod_title = prod_deta.title.substring(0, 17) + '...'
 				}
                 $('.store-products').prepend(
-                    `<div class="col-md-4 col-xs-6" id='store-product'>
+					`<div class="col-md-4 col-xs-6" id='store-product'>
+						<span id='prod_id' style='display:none'>${prod_id}</span>
 						<div class="product">
 							<div class="product-img">
 								<img src="/image/${prod_deta.image[0]}" alt="Product image">
@@ -39,7 +41,7 @@ function getProducts(link, limit) {
 					</div>`
                 )
                 $('#store-product').on('click', function () {
-                    const title = $(this).find('.product-body').find('.prod-title').text();
+                    const title = $(this).find('#prod_id').text();
                     window.location.href = '/items/' + title;
                 });
             })
