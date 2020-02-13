@@ -13,7 +13,7 @@ router.get('/:_id' , async (req,res) =>{
         if(product[0] != null){
             res.render('product', {
                 product: product[0],
-                user: req.user
+                user: req.user ? req.user : ""
             });
         }
         else{

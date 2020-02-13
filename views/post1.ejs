@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+        <style>
+        button{
+            width: 50%; 
+            background-color: #fff; 
+        }
+        .button:hover{
+            background-color: black;
+        }
+        .sell-title{
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .dropdown-menu{
+            width: 50%;
+        }
+        .dropdown-item{
+            padding: 10px;
+            border-top: 1.5px solid rgb(185, 182, 182);
+            
+        }
+        .container{
+            padding: 0px;
+            margin: 30px auto;
+            border: 1.5px solid rgb(185, 182, 182);
+        }
+        button:focus , .dropdown-item:focus {
+            outline: none;
+            background-color: rgb(185, 182, 182);
+        }
+        button:hover ,  .dropdown-item:hover{
+            background-color: rgb(185, 182, 182);
+        }
+        .dropdown-toggle:after { content: none }
+        
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container col-md-7">
+            <div class="sell-title">CHOOSE A CATEGORY OF ITEMS</div>
+                <div class="dropright">
+                    <button type="button" role="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
+                        ELECTRONICS & APPLIANCES
+                    </button>
+                    <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+                        
+                        <a class="dropdown-item" href="#">MOBILE</a>
+                        <a class="dropdown-item" href="#">TABLET</a>
+                        <a class="dropdown-item" href="#">LAPTOP</a>
+                        <a class="dropdown-item" href="#">CALCULATOR</a>
+                        <a class="dropdown-item" href="#">OTHER ITEMS</a>
+                    </div>
+                </div>
+            <div class="dropright">
+                <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
+                    BOOKS AND NOTES
+                </button>
+                <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+                    <a class="dropdown-item" href="#">BOOKS</a>
+                    <a class="dropdown-item" href="#">NOTES</a>
+                    <a class="dropdown-item" href="#">OTHERS</a>
+                </div>
+            </div>          
+            <div class="dropright">
+                <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
+                    VEHICLES
+                </button>
+                <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+                    <a class="dropdown-item" href="#">CYCLES</a>
+                    <a class="dropdown-item" href="#">MOTORCYCLES</a>
+                    <a class="dropdown-item" href="#">CARS</a>
+                </div>
+            </div>
+            <div class="dropright">
+                <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
+                    SPORTS AND HOBBIES
+                </button>
+                <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+                    <a class="dropdown-item" href="#">SPORTS ITEMS</a>
+                    <a class="dropdown-item" href="#">MUSIC ITEMS</a>
+                    <a class="dropdown-item" href="#">GYM AND FITNESS</a>
+                    <a class="dropdown-item" href="#">OTHERS</a>
+                </div>
+            </div>
+            <div class="dropright">
+                <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
+                    OTHERS
+                </button>
+                <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+                    <a class="dropdown-item" href="#">FASHION</a>
+                    <a class="dropdown-item" href="#">SERVICES</a>
+                    <a class="dropdown-item" href="#">OTHERS</a>
+                </div>
+            </div>
+        </div>    
+
+
+
+        <script>
+            var type=" ";
+            var sub_type=" ";
+            $('.dropdown-item').on('click',function(event){
+                event.preventDefault();
+                sub_type = $(this).text();
+                type = ($(this).parent().siblings('button').text()).trim();
+                $('.container').load('/post/attributes');
+            });
+        </script>
+    </body>
+</html>

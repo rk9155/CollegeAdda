@@ -33,7 +33,7 @@ function getProducts(link, limit) {
 								<h4 class="product-price">PRICE : ₹${prod_deta.price}</h4>
 								<div class="product-btns">
 									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare" onclick="window.location.href = 'https://wa.me/?text= Look at the Amazing🤩🤩 deals on *${prod_deta.sub_type}* at *COllegeAdda*.👉👉 ${window.location.href}${prod_id}';"><i class="fa fa-exchange"></i><span class="tooltipp">Share</span></button>
+									<button class="add-to-compare" onclick="window.location.href = 'https://wa.me/?text= Look at the Amazing🤩🤩 deals on *${prod_deta.sub_type}* at *COllegeAdda*.👉👉 ${window.location.href}items/${prod_id}';"><i class="fa fa-exchange"></i><span class="tooltipp">Share</span></button>
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
 								</div>
 							</div>
@@ -41,7 +41,7 @@ function getProducts(link, limit) {
 					</div>`
                 )
 				$('.product-img').on('click', function () {
-                    const title = $(this).find('#prod_id').text();
+                    const title = $(this).parent().siblings('#prod_id').text();
                     window.location.href = '/items/' + title;
                 });
             })
