@@ -20,11 +20,12 @@ router.get('/category/:limit', (req, res) => {
 
     getProducts();
 });
-router.get('/search/:search', (req, res) => {
-    
+router.get('/search/:search/:limit', (req, res) => {
+    let limit = parseInt(req.params.limit);
     async function getProducts() {
         const product = await products.find({ college_name: req.params.search })
             .sort({ date: 1 })
+            .limit(limit)
         if (product != null) {
             res.json(product);
         }

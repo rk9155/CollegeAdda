@@ -44,6 +44,21 @@
 	<!-- HEADER -->
 	<header>
 
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<!-- <ul class="header-links pull-left">
+					<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+				</ul> -->
+				<ul class="header-links pull-right">
+					<li><a href="#" id="location"><i class="fa fa-map-marker"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /TOP HEADER -->
+
 		<!-- MAIN HEADER -->
 		<div id="header">
 			<!-- container -->
@@ -57,6 +72,7 @@
 								<img src="img/logo.png" alt="">
 							</a>
 						</div>
+
 					</div>
 					<!-- /LOGO -->
 
@@ -64,8 +80,9 @@
 					<div class="col-md-6">
 						<div class="header-search">
 							<form>
-								<input class="input" placeholder="Search by College...">
-								<button class="search-btn">Search</button>
+								<input class="input" id="search" placeholder="Search by College...">
+								<ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult"></ul>
+								<button class="search-btn" id="search-btn">Search</button>
 							</form>
 						</div>
 					</div>
