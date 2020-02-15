@@ -28,8 +28,28 @@ app.get('/', (req, res) => {
     });
 })
 
-app.get('/store', (req , res)=>{
-    res.render('store', {
+app.get('/electronics', (req , res)=>{
+    res.render('electronics', {
+        user: req.user ? req.user : ""
+    });
+})
+app.get('/books', (req, res) => {
+    res.render('books', {
+        user: req.user ? req.user : ""
+    });
+})
+app.get('/vehicles', (req, res) => {
+    res.render('vehicles', {
+        user: req.user ? req.user : ""
+    });
+})
+app.get('/sports', (req, res) => {
+    res.render('sports', {
+        user: req.user ? req.user : ""
+    });
+})
+app.get('/hotdeals', (req, res) => {
+    res.render('hotdeals', {
         user: req.user ? req.user : ""
     });
 })
