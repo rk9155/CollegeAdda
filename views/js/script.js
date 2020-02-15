@@ -154,6 +154,5 @@ $('#search-btn').click(function(e){
 	getProductsFromCollege($('#search').val(),7)
 })
 
-var loc_col = 
 
 

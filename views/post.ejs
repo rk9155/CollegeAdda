@@ -33,8 +33,20 @@
 	<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->        
-	
+		<![endif]-->
+
+	<style>
+		.dropdown-toggle{
+			width: 50%;
+		}
+
+		.dropright{
+			margin: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+	</style>
 
 </head>
 
@@ -163,7 +175,7 @@
 					<li id="home"><a href="/">Home</a></li>
 					<li id="store"><a href="/store">Store</a></li>
 					<li id="products"><a href="/#products">Hot Deals</a></li>
-					<li id="categories"><a href="#">Categories</a></li>	
+					<li id="categories"><a href="#">Categories</a></li>
 					<li id="contact"><a href="#newsletter">Contact us</a></li>
 				</ul>
 				<!-- /NAV -->
@@ -172,9 +184,9 @@
 		</div>
 		<!-- /container -->
 	</nav>
-    <!-- /NAVIGATION -->
-	
-	
+	<!-- /NAVIGATION -->
+
+
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb" class="section">
 		<!-- container -->
@@ -184,7 +196,7 @@
 				<div class="col-md-12">
 					<ul class="breadcrumb-tree">
 						<li><a href="/">Home</a></li>
-						<li><a href="#">All Categories</a></li> 
+						<li><a href="#">All Categories</a></li>
 					</ul>
 				</div>
 			</div>
@@ -194,65 +206,93 @@
 	</div>
 	<!-- /BREADCRUMB -->
 
-    <!-- Post Menu -->
-    <div class="section">
-        <div class="sell-title">CHOOSE A CATEGORY OF ITEMS</div>
-            <div class="dropright">
-                <button type="button" role="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
-                    ELECTRONICS & APPLIANCES
-                </button>
-                <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
-                    
-                    <a class="dropdown-item" href="#">MOBILE</a>
-                    <a class="dropdown-item" href="#">TABLET</a>
-                    <a class="dropdown-item" href="#">LAPTOP</a>
-                    <a class="dropdown-item" href="#">CALCULATOR</a>
-                    <a class="dropdown-item" href="#">OTHER ITEMS</a>
-                </div>
-            </div>
-        <div class="dropright">
-            <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
-                BOOKS AND NOTES
-            </button>
-            <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
-                <a class="dropdown-item" href="#">BOOKS</a>
-                <a class="dropdown-item" href="#">NOTES</a>
-                <a class="dropdown-item" href="#">OTHERS</a>
-            </div>
-        </div>          
-        <div class="dropright">
-            <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
-                VEHICLES
-            </button>
-            <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
-                <a class="dropdown-item" href="#">CYCLES</a>
-                <a class="dropdown-item" href="#">MOTORCYCLES</a>
-                <a class="dropdown-item" href="#">CARS</a>
-            </div>
-        </div>
-        <div class="dropright">
-            <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
-                SPORTS AND HOBBIES
-            </button>
-            <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
-                <a class="dropdown-item" href="#">SPORTS ITEMS</a>
-                <a class="dropdown-item" href="#">MUSIC ITEMS</a>
-                <a class="dropdown-item" href="#">GYM AND FITNESS</a>
-                <a class="dropdown-item" href="#">OTHERS</a>
-            </div>
-        </div>
-        <div class="dropright">
-            <button type="button" style="border: 1.5px solid rgb(185, 182, 182);border-radius: 0px;text-align: left;padding: 10px;" class="dropdown-toggle" data-toggle="dropdown">
-                OTHERS
-            </button>
-            <div class="dropdown-menu" style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
-                <a class="dropdown-item" href="#">FASHION</a>
-                <a class="dropdown-item" href="#">SERVICES</a>
-                <a class="dropdown-item" href="#">OTHERS</a>
-            </div>
-        </div>
-    </div>    
-    <!-- /Post Menu -->
+	<!-- Post Menu -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<!-- section tab & slick -->
+				<div class="col-md-8">
+					<h3 class="title">CHOOSE A CATEGORY OF ITEMS</h3>
+					<br>
+					
+					<div class="dropright row col-md-12">
+						<button type="button" role="button"
+							style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;"
+							class="dropdown-toggle" data-toggle="dropdown">
+							ELECTRONICS & APPLIANCES
+						</button>
+						<div class="dropdown-menu col-md-6"
+							style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+
+							<a class="dropdown-item" href="#">MOBILE</a>
+							<a class="dropdown-item" href="#">TABLET</a>
+							<a class="dropdown-item" href="#">LAPTOP</a>
+							<a class="dropdown-item" href="#">CALCULATOR</a>
+							<a class="dropdown-item" href="#">OTHER ITEMS</a>
+						</div>
+					</div>
+					<div class="dropright col-md-12 row">
+						<button type="button"
+							style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;"
+							class="dropdown-toggle" data-toggle="dropdown">
+							BOOKS AND NOTES
+						</button>
+						<div class="dropdown-menu col-md-6"
+							style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+							<a class="dropdown-item" href="#">BOOKS</a>
+							<a class="dropdown-item" href="#">NOTES</a>
+							<a class="dropdown-item" href="#">OTHERS</a>
+						</div>
+					</div>
+					<div class="dropright col-md-12 row">
+						<button type="button"
+							style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;"
+							class="dropdown-toggle" data-toggle="dropdown">
+							VEHICLES
+						</button>
+						<div class="dropdown-menu col-md-6"
+							style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+							<a class="dropdown-item" href="#">CYCLES</a>
+							<a class="dropdown-item" href="#">MOTORCYCLES</a>
+							<a class="dropdown-item" href="#">CARS</a>
+						</div>
+					</div>
+					<div class="dropright col-md-12 row">
+						<button type="button"
+							style="border: 1.5px solid rgb(185, 182, 182);border-bottom: none;border-radius: 0px;text-align: left;padding: 10px;"
+							class="dropdown-toggle" data-toggle="dropdown">
+							SPORTS AND HOBBIES
+						</button>
+						<div class="dropdown-menu col-md-6"
+							style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+							<a class="dropdown-item" href="#">SPORTS ITEMS</a>
+							<a class="dropdown-item" href="#">MUSIC ITEMS</a>
+							<a class="dropdown-item" href="#">GYM AND FITNESS</a>
+							<a class="dropdown-item" href="#">OTHERS</a>
+						</div>
+					</div>
+					<div class="dropright col-md-12 row">
+						<button type="button"
+							style="border: 1.5px solid rgb(185, 182, 182);border-radius: 0px;text-align: left;padding: 10px;"
+							class="dropdown-toggle" data-toggle="dropdown">
+							OTHERS
+						</button>
+						<div class="dropdown-menu col-md-6"
+							style="border-radius: 0px; padding: 0px;margin: 0px; background-color: #fff;border: none;">
+							<a class="dropdown-item" href="#">FASHION</a>
+							<a class="dropdown-item" href="#">SERVICES</a>
+							<a class="dropdown-item" href="#">OTHERS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /Post Menu -->
 
 	<!-- NEWSLETTER -->
 	<div id="newsletter" class="section">
@@ -301,7 +341,8 @@
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
 							<h3 class="footer-title">About Us</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor
 								incididunt ut.</p>
 							<ul class="footer-links">
 								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
