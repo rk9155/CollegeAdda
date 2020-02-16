@@ -7,6 +7,8 @@ const upload = require('./Routes/upload');
 const home = require('./Routes/Home');
 const post = require('./Routes/post');
 const items = require('./Routes/items');
+const myadds = require('./Routes/my_adds')
+const my_wishlist = require('./Routes/my_wishlist')
 const auth = require('./Routes/passport');
 const loggedInUser = require('./Routes/loggedInUser');
 const keys = require('./config/keys');
@@ -63,6 +65,8 @@ app.use('/upload', upload);
 app.use('/items', items);
 app.use('/auth', auth);
 app.use('/api', loggedInUser);
+app.use('/myadds', myadds);
+app.use('/wishlist', my_wishlist);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);

@@ -33,12 +33,12 @@ router.post('/', upload, function (req, res, next) {
         imgArray.push(img.filename);
     });
 
-    const title = req.body.title;
+    const title = req.body.title.trim();
     const type = req.body.type;
     const sub_type = req.body.sub_type;
-    const owner_name = req.body.owner_name;
+    const owner_name = req.user.name;
     const owner_mob = req.body.owner_mob;
-    const owner_email = req.body.owner_email;
+    const owner_email = req.user.email;
     const owner_image = req.user.picture;
     const price = req.body.price;
     const state = req.body.state;
@@ -46,7 +46,7 @@ router.post('/', upload, function (req, res, next) {
     const description = req.body.description;
     const college_name = req.body.college_name;
     const uploasProduct = new productUpload({
-        title: title.trim(),
+        title: title,
         type: type,
         sub_type: sub_type,
         owner_name: owner_name,
@@ -63,6 +63,8 @@ router.post('/', upload, function (req, res, next) {
     uploasProduct.save(function (err, doc) {
         if (err) throw err;
     });
+
+
     res.redirect('/');
 });
 

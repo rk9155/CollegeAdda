@@ -17,7 +17,8 @@ const schema = new mongoose.Schema({
     state: String,
     city: String,
     college_name: String,
-    image: [String]
+    image: [String],
+    isWish : Boolean
 });
 
 const productUpload = mongoose.model('products' , schema);
