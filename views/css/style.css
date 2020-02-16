@@ -693,9 +693,7 @@ textarea.input {
 ===========================================================*/
 
 #navigation {
-  background: #FFF;
-  border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid rgb(39, 36, 67);
+  background: #F1F3F8;
 }
 
 /*----------------------------*\
@@ -2425,4 +2423,11 @@ textarea.input {
     float: none;
     margin-top: 10px;
   }
+}
+
+
+.ad-img{
+  max-width: 100%;
+  margin: 0px ;
+  border-radius: 10px;
 }
