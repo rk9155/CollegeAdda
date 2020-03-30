@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>COAD - Products</title>
+	<link rel="icon" href="/img/favicon.png">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="/css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	<style>
+		.dropdown-toggle{
+			width: 50%;
+		}
+
+		.dropright{
+			margin: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		.selected {
+            font-size: 14px;
+            color: #666;
+            padding: 5px 20px;
+        }
+
+        .postad {
+            margin: 10px 25px;
+            padding: 10px 25px;
+        }
+        .uploadFiles{
+			padding: 10px;
+            cursor: pointer;
+			display: inline-block;
+			padding: 5px;
+			text-align: center;
+			height: 160px;
+		}
+		.uploadFiles img{
+			border: 0.5px solid lightgray;
+			padding: 10px;
+			height: 100%;
+			max-width: 100%;
+		}
+
+	</style>
+
+	<script>
+		function showsub(loc){
+			window.location = '/post/add/'+loc;
+		}
+	</script>
+
+</head>
+
+<body>
+	<header>
+
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<img src="/img/logo.png" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
+
+					<!-- SEARCH BAR -->
+					<div class="col-md-6">
+						<div class="header-search">
+							<form>
+								<input class="input" placeholder="Search by College...">
+								<button class="search-btn">Search</button>
+							</form>
+						</div>
+					</div>
+					<!-- /SEARCH BAR -->
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Login -->
+							<div id="login">
+								<a class="login-button" href="/auth/google">
+									<i class="fa fa-google"></i>
+									<span>Login</span>
+								</a>
+							</div>
+							<!-- /Login -->
+
+							<!-- Profile -->
+							<div class="dropdown" id="profile">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<img src="<%=user.picture%>"
+										style='display: block; height: 40px;width: 40px;border-radius: 50%;'>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Profile</a></li>
+									<li><a href="/api/logout">Logout</a></li>
+								</ul>
+							</div>
+							<!-- /Profile -->
+
+							<!-- Wishlist -->
+							<div class="dropdown" id='wishlist'>
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<i class="fa fa-heart-o"></i>
+									<span>Your Wishlist</span>
+									<div class="qty">3</div>
+								</a>
+								<div class="cart-dropdown">
+									<div class="cart-list">
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="img/product01.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+
+										<div class="product-widget">
+											<div class="product-img">
+												<img src="img/product02.png" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
+												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+											</div>
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</div>
+									</div>
+									<div class="cart-summary">
+										<small>3 Item(s) selected</small>
+										<h5>SUBTOTAL: $2940.00</h5>
+									</div>
+								</div>
+							</div>
+							<!-- /Wishlist -->
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
+					</div>
+					<!-- /ACCOUNT -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav navbar-nav">
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/electronics">Electronics & Appliances</a></li>
+					<li><a href="/books">Books & Notes</a></li>
+					<li><a href="/vehicles">Vehicles</a></li>	
+					<li><a href="/sports">Sports & Hobbies</a></li>	
+					<li><a href="/hotdeals">Hot Deals</a></li>
+					<li><a href="#newsletter">Contact us</a></li>
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
+
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="breadcrumb-tree">
+						<li><a href="/">Home</a></li>
+                        <li><a href="/post/add">All Categories</a></li>
+                        <li><a href="/post/add/<%=category%>"><%=category.replace('&', ' and ')%></a></li>
+                        <li><a class="actv" href="/post/add/<%=category.replace('&', ' and ')%>/<%=item%>"><%=item%></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- Post Menu -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+				<!-- section tab & slick -->
+				<div class="col-md-12" id="post-ad">
+					<div class="row">
+						<div class="col-md-8" style="padding: 5px;">
+							<div class="form-box">
+								<form action="../../../upload" enctype="multipart/form-data" method="POST">
+									<input type="text" name="type" style="display: none;" value="<%=category%>">
+									<input type="text" name="sub_type" style="display: none;" value="<%=item%>">
+									<div class="title-and-description">
+										<p style="text-align: center;">Ad Title And Product Description</p><br>
+										<hr>
+										<label for="ad-title">Ad Title *</label><br>
+										<textarea required name="title" maxlength="50" placeholder="Give an appropriate title for the product." id="ad-title" rows="3"></textarea>
+										<br><span>Mention the key features of your item e.g. brand, model, age, type . (Max length 50 words)</span>
+										<br><br><br>
+										<label for="ad-description">Product Description *</label><br>
+										<textarea required name="description" maxlength="400" placeholder="Give a complete description for your product." id="ad-description" rows="6"></textarea>
+										<br><span>Include condition, features and reason for selling. (Max length 400 words)</span>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									<div class="images"  style="text-align: center;">
+										<p>Product Images</p><br>
+										<hr>
+										<div class="col-md-12">
+											<div class="row">
+												<input required type="file" style="display: none;" class='img1' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img1'>
+													<img src="../../../img/upload.png" id='notUpload1' >
+													<img src="../../../img/Done.png" id='uploaded1' alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img2' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img2' >
+													<img src="../../../img/upload.png" id='notUpload2'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded2'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img3' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img3' >
+													<img src="../../../img/upload.png" id='notUpload3'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded3'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img4' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img4' >
+													<img src="../../../img/upload.png" id='notUpload4'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded4'  alt="donee" style="display: none;">
+												</div><br>
+												<input type="file" style="display: none;" class='img5' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img5' >
+													<img src="../../../img/upload.png" id='notUpload5'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded5'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img6' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img6' >
+													<img src="../../../img/upload.png" id='notUpload6'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded6'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img7' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img7' >
+													<img src="../../../img/upload.png" id='notUpload7'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded7'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img8' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img8' >
+													<img src="../../../img/upload.png" id='notUpload8'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded8'  alt="donee" style="display: none;">
+												</div><br>
+												<input type="file" style="display: none;" class='img9' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img9' >
+													<img src="../../../img/upload.png" id='notUpload9'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded9'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img10' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img10' >
+													<img src="../../../img/upload.png" id='notUpload10'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded10'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img11' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img11' >
+													<img src="../../../img/upload.png" id='notUpload11'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded11'  alt="donee" style="display: none;">
+												</div>
+												<input type="file" style="display: none;" class='img12' name="Image">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img12' >
+													<img src="../../../img/upload.png" id='notUpload12'  alt="upload image">
+													<img src="../../../img/Done.png" id='uploaded12'  alt="donee" style="display: none;">
+												</div>
+											</div>
+										</div>
+										<br><span>Click on the above icon and upload atleast one original and recent pictures of the product.</span>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									<div class="price">
+										<p style="text-align: center;">Product Price</p><br>
+										<hr>
+										<label for="price">Ad Title *</label><br>
+										<input name="price" required type="tel" placeholder="Set a price for the product." id="price" rows="3" onfocus="this.value = '&#8377  '"></input>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									<div class="location">
+										<p style="text-align: center;">Confirm Your Location</p><br>
+										<hr>
+										<label for="college">College Name *</label><br>
+										<select required id="college" name="college_name"></select>
+										<br><span>Name of the college in which the product is to be sold.</span>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									<div class="personal">
+										<p style="text-align: center;">Product Price</p><br>
+										<hr>
+										<label for="owner_name">Name *</label>
+										<br><input required type="text" name="owner_name" maxlength="70" id="owner_name" value="<%=user.name%>">
+										<br><br><br><label for="owner_email">Email *</label>
+										<br><input required type="email" name="owner_email" maxlength="70" id="owner_email" value="<%=user.email%>">
+										<br><br><br><label for="owner_mob">Mobile number *</label>
+										<br><input required type="tel" name="owner_mob" placeholder="Enter your current mobile number" maxlength="10" minlength="10" id="owner_mob">
+										<br><span>This mobile number is used by the customer to contact the product owner.</span>
+										<br><br><br><br><br>
+										<button type="submit" class="continue"><span>Post Ad</span></button>
+									</div>
+								</form>
+							</div>
+						</div>
+                        <div class="col-md-4" style="padding: 5px;">
+                            <div class="form-box" style="background-color: white;border-radius: 10px;">
+								<p>Product Evaluation</p><br>
+								<hr>
+								<div class="prod-evaluation">
+									<label>Seller Info</label>
+									<li><%=user.name%></li>
+									<li><%=user.email%></li>
+									<br><label>Product</label>
+									<li><%=item.toUpperCase()%> in <%=category.replace('&', ' and ')%></li>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /Post Menu -->
+
+	<!-- NEWSLETTER -->
+	<div id="newsletter" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="newsletter">
+						<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+						<form>
+							<input class="input" type="email" placeholder="Enter Your Email">
+							<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+						</form>
+						<ul class="newsletter-follow">
+							<li>
+								<a href="#"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-instagram"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NEWSLETTER -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">About Us</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor
+								incididunt ut.</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Categories</h3>
+							<ul class="footer-links">
+								<li><a href="#">Hot deals</a></li>
+								<li><a href="#">Laptops</a></li>
+								<li><a href="#">Smartphones</a></li>
+								<li><a href="#">Cameras</a></li>
+								<li><a href="#">Accessories</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Information</h3>
+							<ul class="footer-links">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Orders and Returns</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Service</h3>
+							<ul class="footer-links">
+								<li><a href="#">My Account</a></li>
+								<li><a href="#">View Cart</a></li>
+								<li><a href="#">Wishlist</a></li>
+								<li><a href="#">Track My Order</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
+
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/slick.min.js"></script>
+	<script src="/js/nouislider.min.js"></script>
+	<script src="/js/jquery.zoom.min.js"></script>
+	<script src="/js/main.js"></script>
+
+
+	<script>
+		if ("<%=user.picture%>" != "") {
+			$('#login').hide();
+			$('#profile').show();
+			$('#wishlist').show();
+		}
+		else {
+			$('#login').show();
+			$('#profile').hide();
+			$('#wishlist').hide();
+		}
+
+		$.getJSON('../../../json/college.json', function (data) {
+            data.clg.forEach((clg_name) => {
+                $('#college').append(`<option value='${clg_name}'>${clg_name}</option>`)
+
+            });
+        });
+
+		$('.uploadFiles').click(function(){
+            const inputFile = $(this).attr('id');
+            $("."+inputFile).click();
+            console.log($("."+inputFile).val());
+            $("."+inputFile).on('change',function(){
+                if($("."+inputFile).val() != ""){
+                    $('#notUpload'+inputFile.substring(3)).hide();
+                    $('#uploaded'+inputFile.substring(3)).show();
+                }
+            });     
+		});
+		
+		$('.price').hide();
+		$('.personal').hide();
+		$('.location').hide();
+		$('.images').hide();
+
+		$('.title-and-description > .continue').click(function(){
+			$('.prod-evaluation').append(`
+				<br><label>Title</label>
+				<li>${$('#ad-title').val()}</li>
+				<br><label>Description</label>
+				<li>${$('#ad-description').val()}</li>
+			`)
+			$('.title-and-description').hide();
+			$('.location').show()
+		});
+		$('.location > .continue').click(function(){
+			$('.prod-evaluation').append(`
+				<br><label>College</label>
+				<li>${$('#college').val()}</li>
+			`)
+			$('.location').hide();
+			$('.images').show()
+		});
+		$('.images > .continue').click(function(){
+			$('.images').hide();
+			$('.price').show()
+		});
+		$('.price > .continue').click(function(){
+			$('.prod-evaluation').append(`
+				<br><label>Price</label>
+				<li>${$('#price').val()}</li>
+			`)
+			$('.price').hide();
+			$('.personal').show()
+		});
+		
+
+	</script>
+
+</body>
+
+</html>

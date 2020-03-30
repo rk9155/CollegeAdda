@@ -30,11 +30,6 @@ app.get('/', (req, res) => {
     });
 })
 
-app.get('/profile', (req, res) => {
-    res.render('profile', {
-        user: req.user ? req.user : ""
-    });
-})
 
 app.get('/electronics', (req , res)=>{
     res.render('electronics', {

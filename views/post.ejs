@@ -48,6 +48,12 @@
 
 	</style>
 
+	<script>
+		function showsub(loc){
+			window.location = '/post/add/'+loc;
+		}
+	</script>
+
 </head>
 
 <body>
@@ -172,11 +178,13 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li id="home"><a href="/">Home</a></li>
-					<li id="store"><a href="/store">Store</a></li>
-					<li id="products"><a href="/#products">Hot Deals</a></li>
-					<li id="categories"><a href="#">Categories</a></li>
-					<li id="contact"><a href="#newsletter">Contact us</a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/electronics">Electronics & Appliances</a></li>
+					<li><a href="/books">Books & Notes</a></li>
+					<li><a href="/vehicles">Vehicles</a></li>	
+					<li><a href="/sports">Sports & Hobbies</a></li>	
+					<li><a href="/hotdeals">Hot Deals</a></li>
+					<li><a href="#newsletter">Contact us</a></li>
 				</ul>
 				<!-- /NAV -->
 			</div>
@@ -196,7 +204,7 @@
 				<div class="col-md-12">
 					<ul class="breadcrumb-tree">
 						<li><a href="/">Home</a></li>
-						<li><a href="#">All Categories</a></li>
+						<li><a class="actv" href="/post/add">All Categories</a></li>
 					</ul>
 				</div>
 			</div>
@@ -219,23 +227,24 @@
 					<br>
 					
 					<div class="row">
+						
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/electronics.jpg" alt="tile" class="ad-img">
+							<img src="../img/electronics.jpg" alt="tile" class="ad-img" onclick="showsub('electronics&appliances')">	
 						</div>
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/vehicles@2x.jpg" alt="tile" class="ad-img">
+							<img src="../img/vehicles@2x.jpg" alt="tile" class="ad-img" onclick="showsub('vehicles')">
 						</div>
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/sports@2x.jpg" alt="tile" class="ad-img">
+							<img src="../img/sports@2x.jpg" alt="tile" class="ad-img" onclick="showsub('sports&entertainment')">
 						</div>
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/books@2x.jpg" alt="tile" class="ad-img">
+							<img src="../img/books@2x.jpg" alt="tile" class="ad-img" onclick="showsub('books&notes')">
 						</div>
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/services@2x.jpg" alt="tile" class="ad-img">
+							<img src="../img/services@2x.jpg" alt="tile" class="ad-img" onclick="showsub('services')">
 						</div>
 						<div class="col-md-4" style="padding: 15px;">
-							<img src="../img/others@2x.jpg" alt="tile" class="ad-img">
+							<img src="../img/others@2x.jpg" alt="tile" class="ad-img" onclick="showsub('other')">
 						</div>
 					</div>
 				</div>

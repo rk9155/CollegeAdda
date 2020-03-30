@@ -53,7 +53,7 @@ router.post('/', upload, function (req, res, next) {
         owner_mob: owner_mob,
         owner_email: owner_email,
         owner_image: owner_image,
-        price: price,
+        price: price.substring(2),
         state: state,
         city: city,
         description: description,

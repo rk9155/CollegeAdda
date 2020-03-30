@@ -78,11 +78,19 @@ function getProductsFromCollege(link, limit) {
 		if (product.length != 0) {
 			$('.store-products').html('');
 			product.forEach((prod_deta) => {
+				var prod_coll = prod_deta.college_name;
 				var prod_title = prod_deta.title;
 				var prod_id = prod_deta._id
 				if ($(document).width() < 700) {
 					if (prod_title.length > 17)
 						prod_title = prod_deta.title.substring(0, 17) + '...'
+
+					if (prod_coll.length > 17)
+					prod_coll = prod_coll.substring(0, 17) + '....'
+				}
+				else{
+					if (prod_coll.length > 30)
+						prod_coll = prod_coll.substring(0, 30) + '....'
 				}
 				let clas;
 				if (prod_deta.isWish) {
@@ -92,7 +100,7 @@ function getProductsFromCollege(link, limit) {
 					clas = 'fa fa-heart-o'
 				}
 				$('.store-products').append(
-					`<div class="col-md-4 col-xs-6" id='store-product'>
+					`<div class="col-md-3 col-xs-6" id='store-product'>
 						<span id='prod_id' style='display:none'>${prod_id}</span>
 						<div class="product">
 							<div class="product-img">
@@ -102,14 +110,13 @@ function getProductsFromCollege(link, limit) {
 								</div>
 							</div>
 							<div class="product-body">
-								<p class="product-category">${prod_deta.sub_type}</p>
-								<h3 class="product-name"><a href="#" class="prod-title">${prod_title}</a></h3>
-								<h4 class="product-price">PRICE : ₹${prod_deta.price}</h4>
+								<h4 class="product-price"><span>₹</span>${prod_deta.price}</h4>
+								<h6 class="product-name"><a href="#" class="prod-title">${prod_title}</a></h6>
 								<div class="product-btns">
-									<button class="add-to-wishlist"><i class=${clas}></i><span class="tooltipp">add to wishlist</span></button>
+									<button class="add-to-wishlist"><i class= 'fa ${clas}'></i><span class="tooltipp">add to wishlist</span></button>
 									<button class="add-to-compare" onclick="window.location.href = 'https://wa.me/?text= Look at the Amazing🤩🤩 deals on *${prod_deta.sub_type}* at *COllegeAdda*.👉👉 ${window.location.href}items/${prod_id}';"><i class="fa fa-exchange"></i><span class="tooltipp">Share</span></button>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
 								</div>
+								<h6 class="product-category">${prod_coll}</h6>
 							</div>
 						</div>
 					</div>`
@@ -118,6 +125,7 @@ function getProductsFromCollege(link, limit) {
 					const title = $(this).parent().siblings('#prod_id').text();
 					window.location.href = '/items/' + title;
 				});
+				
 			})
 		}
 		else {
@@ -144,7 +152,7 @@ if ($(document).width() < 700) {
 
 }
 
-$.getJSON('./State_City.json', function (data) {
+$.getJSON('../json/college.json', function (data) {
 	$('#search').on('keyup', function (e) {
 
 		$('#searchResult').html(``);

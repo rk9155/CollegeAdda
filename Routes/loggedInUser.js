@@ -9,5 +9,10 @@ router.get('/logout', (req,res)=>{
     req.logOut();
     res.redirect('/')
 })
+router.get('/profile', (req, res) => {
+    res.render('profile', {
+        user: req.user ? req.user : ""
+    });
+})
 module.exports = router;
 

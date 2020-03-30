@@ -36,6 +36,7 @@
 </head>
 
 <body>
+
 	<a class="float post-add" <% if( user != ""){%> href="/post/add">
 		<%}else{%>
 		href="/auth/google">
@@ -43,7 +44,6 @@
 
 	<!-- HEADER -->
 	<header>
-
 		<!-- TOP HEADER -->
 		<div id="top-header">
 			<div class="container">
@@ -58,7 +58,10 @@
 			</div>
 		</div>
 		<!-- /TOP HEADER -->
-
+		<div class="progress" style="margin: 0px;height: 5px;display: none;" >
+			<div class="progress-bar progress-bar-striped" id="myBar" style="width:0%">
+			</div>
+		</div>
 		<!-- MAIN HEADER -->
 		<div id="header">
 			<!-- container -->
@@ -72,9 +75,6 @@
 								<img src="img/logo.png" alt="">
 							</a>
 						</div>
-
-						
-
 					</div>
 					<!-- /LOGO -->
 
@@ -82,7 +82,7 @@
 					<div class="col-md-6">
 						<div class="header-search">
 							<form>
-								<input class="input" id="search" placeholder="Search by College...">
+								<input class="input" autofocus autocomplete="off" id="search" placeholder="Search by College...">
 								<ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult"></ul>
 								<button class="search-btn" id="search-btn">Search</button>
 							</form>
@@ -108,7 +108,7 @@
 									<img src="<%=user.picture%>" style='display: block; height: 40px;width: 40px;border-radius: 50%;'>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="/profile">Profile</a></li>
+									<li><a href="/api/profile">Profile</a></li>
 									<li><a href="/api/logout">Logout</a></li>
 								</ul>
 							</div>
@@ -160,12 +160,13 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li id="home"><a href="/">Home</a></li>
-						<li id="store"><a href="/electronics">Electronics & Appliances</a></li>
-						<li id="products"><a href="/books">Books & Notes</a></li>
-						<li id="categories"><a href="/vehicles">Vehicles</a></li>	
-						<li id="contact"><a href="/sports">Sports & Hobbies</a></li>	
-						<li id="contact"><a href="/hotdeals">Hot Deals</a></li>
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="/electronics">Electronics & Appliances</a></li>
+						<li><a href="/books">Books & Notes</a></li>
+						<li><a href="/vehicles">Vehicles</a></li>	
+						<li><a href="/sports">Sports & Hobbies</a></li>	
+						<li><a href="/hotdeals">Hot Deals</a></li>
+						<li><a href="#newsletter">Contact us</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -463,10 +464,10 @@
 			$('#wishlist').hide();
 		}
 
-		$('#home').addClass('active')
 	</script>
 
 	<script src="js/wishlist.js"></script>
+	<script src="js/progressbar.js"></script>
 
 
 </body>
