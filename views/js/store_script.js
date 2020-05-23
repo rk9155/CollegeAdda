@@ -1,41 +1,8 @@
-var max_limit = 7
-var max_limit_all = 7
-$(document).ready(function(){
-	let college_name = getCookie('college')
-	if(!college_name){
-		$('#pop-coll-modal').click()
-	}
-	else{
-		$('#search').val(college_name)
-		$('#coll-data').text(college_name)
-		getProducts('',max_limit)
-	}
-
-	$.get('/products/count?college='+ $('#search').val(),function (count) {
-		$('#total-qt').html(count)
-	})
-
-	$('#location').text(getCookie('location'))
-})
-
-$.get('/products/count?college='+ $('#search').val(),function (count) {
-	$('#total-qt').html(count)
-})
-
-$('#show-more').click(function () {
-	move(2500)
-	max_limit_all = max_limit_all + 7
-	getProducts('', max_limit_all)
-})
-if ("<%=user.picture%>" != "") {
-	$('.logged-in').hide();
-	$('.avatar').show();
-	$('.sell-button').addClass('mt-2');
-}
-
-function getProducts(link, limit) {
-	$.get('/products/category' + link + '/' + limit +'?college='+ $('#search').val(), function (product) {
+$('#location').text(getCookie('location'))
+function getProducts(link, limit, query) {
+	$.get('/products/store/' + link + '/' + limit +'?college='+ $('#search').val() + '&' + query, function (product) {
 		if (product.length != 0) {
+			console.log(product)
 			$('#store-qt').html(product.length)
 			$('.store-products').html('');
 			product.forEach((prod_deta) => {
@@ -62,7 +29,7 @@ function getProducts(link, limit) {
 					clas = "fa-heart-o"
 				}
 				$('.store-products').append(
-					`<div class="col-md-3 col-xs-6" id='store-product'>
+					`<div class="col-md-4 col-xs-6" id='store-product'>
 						<span id='prod_id' style='display:none'>${prod_id}</span>
 						<div class="product">
 							<div class="product-img">
@@ -98,31 +65,31 @@ function getProducts(link, limit) {
 }
 
 
-$('.all-categories').click(function () {
-	move(3000)
-	$.get('/products/count?college='+ $('#search').val(),function (count) {
-		$('#total-qt').html(count)
-	})
-	$(this).parent('li').siblings().removeClass('active');
-	$(this).parent('li').addClass('active');
-	getProducts('', max_limit);
-})
+// $('.all-categories').click(function () {
+// 	move(3000)
+// 	$.get('/products/count?college='+ $('#search').val(),function (count) {
+// 		$('#total-qt').html(count)
+// 	})
+// 	$(this).parent('li').siblings().removeClass('active');
+// 	$(this).parent('li').addClass('active');
+// 	getProducts('', max_limit);
+// })
 
-$('.main-category').click(function () {
-	move(2000)
-	$(this).parent('li').siblings().removeClass('active');
-	$(this).parent('li').addClass('active');
-	let link = $(this).attr('id').replace(/ /g, '%20');
-	getProducts('/' + link, max_limit)
+// $('.main-category').click(function () {
+// 	move(2000)
+// 	$(this).parent('li').siblings().removeClass('active');
+// 	$(this).parent('li').addClass('active');
+// 	let link = $(this).attr('id').replace(/ /g, '%20');
+// 	getProducts('/' + link, max_limit)
 
-	$.get('/products/count/sub/'+link + '?college='+ $('#search').val(),function (count) {
-		$('#total-qt').html(count)
-	})
-});
+// 	$.get('/products/count/sub/'+link + '?college='+ $('#search').val(),function (count) {
+// 		$('#total-qt').html(count)
+// 	})
+// });
 
-if ($(document).width() < 700) {
+// if ($(document).width() < 700) {
 
-}
+// }
 
 $.getJSON('../json/college.json', function (data) {
 	$('#search').on('keyup', function (e) {
@@ -156,13 +123,6 @@ $.getJSON('../json/college.json', function (data) {
 
 });
 
-$('#search-btn').click(function (e) {
-	move(2500)
-	$('#coll-data').text($('#search').val())
-	setCookie('college',$('#search').val() , 10)
-	e.preventDefault()
-	getProducts('', max_limit)
-})
 
 
 

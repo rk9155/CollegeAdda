@@ -30,8 +30,7 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
-
-
+	
 	
 </head>
 
@@ -53,12 +52,12 @@
 					<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 				</ul> -->
 				<ul class="header-links">
-					<li><a href="#" id="location"><i class="fa fa-map-marker"></i>Patna</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i><span id="location"></span></a></li>
 				</ul>
 			</div>
 		</div>
 		<!-- /TOP HEADER -->
-		<div class="progress" style="margin: 0px;height: 5px;display: none;" >
+		<div class="progress">
 			<div class="progress-bar progress-bar-striped" id="myBar" style="width:0%">
 			</div>
 		</div>
@@ -78,14 +77,35 @@
 					</div>
 					<!-- /LOGO -->
 
+
+					<div id="coll-modal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+					  
+						  <!-- Modal content-->
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h4 class="modal-title">Select Your College</h4>
+							</div>
+							<div class="modal-body">
+
+								<input class="input" autofocus autocomplete="off" id="search" placeholder="Select your college">
+								<ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult"></ul>
+								<div style="width: 100%;" class="text-center">
+									<button class="search-btn" data-dismiss='modal' id="search-btn">Search</button>
+								</div>
+
+							</div>
+						  </div>
+					  
+						</div>
+					</div>
 					<!-- SEARCH BAR -->
 					<div class="col-md-6">
-						<div class="header-search">
-							<form>
-								<input class="input" autofocus autocomplete="off" id="search" placeholder="Search by College...">
-								<ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult"></ul>
-								<button class="search-btn" id="search-btn">Search</button>
-							</form>
+						<div class="college">
+							<div class="college-name" id="pop-coll-modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#coll-modal">
+								<span id="coll-data">-</span>  
+								<span style="float: right;"><i class="fa fa-caret-down"></i></span>
+							</div>
 						</div>
 					</div>
 					<!-- /SEARCH BAR -->
@@ -161,11 +181,11 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="/">Home</a></li>
-						<li><a href="/electronics">Electronics & Appliances</a></li>
-						<li><a href="/books">Books & Notes</a></li>
-						<li><a href="/vehicles">Vehicles</a></li>	
-						<li><a href="/sports">Sports & Hobbies</a></li>	
-						<li><a href="/hotdeals">Hot Deals</a></li>
+						<li><a href="/store/electronics">Electronics & Appliances</a></li>
+						<li><a href="/store/books">Books & Notes</a></li>
+						<li><a href="/store/vehicles">Vehicles</a></li>	
+						<li><a href="/store/sports">Sports & Hobbies</a></li>	
+						<li><a href="/store/hotdeals">Hot Deals</a></li>
 						<li><a href="#newsletter">Contact us</a></li>
 					</ul>
 					<!-- /NAV -->
@@ -324,12 +344,15 @@
 						<!-- /product -->
 					</div>
 					<!-- /store products -->
-
+					<div class="store-filter clearfix">
+						<span class="store-qty">Showing <span id='store-qt'></span> of <span id="total-qt"></span> products</span>
+					</div>
 					<!-- Show More -->
 					<div class="showAllItems">
 						<a id="show-more" class="showMoreButton">See More</a>
 					</div>
 					<!-- /Show More -->
+
 				</div>
 				<!-- /row -->
 			</div>
@@ -450,7 +473,9 @@
 	<script src="js/nouislider.min.js"></script>
 	<script src="js/jquery.zoom.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/cookiee.js"></script>
 	<script src="js/script.js"></script>
+
 
 	<script>
 		if ("<%=user.picture%>" != "") {
@@ -468,7 +493,10 @@
 
 	<script src="js/wishlist.js"></script>
 	<script src="js/progressbar.js"></script>
-
+	<script>
+		move(4000)
+	</script>
+	<script src="js/location.js"></script>
 
 </body>
 

@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>COAD - Products</title>
+	<title>COAD STORE</title>
+
 	<link rel="icon" href="/img/favicon.png">
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -27,7 +28,6 @@
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="/css/style.css" />
-
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -35,32 +35,12 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-	<style>
-		.dropdown-toggle{
-			width: 50%;
-		}
-
-		.dropright{
-			margin: 0px;
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-
-	</style>
-
-
-<script>
-	function openForm(obj){
-		window.location = '/post/add/books$notes/'+obj;
-	}
-</script>
-
 </head>
 
 <body>
+	<!-- HEADER -->
 	<header>
 
-		<!-- TOP HEADER -->
 		<div id="top-header">
 			<div class="container">
 				<!-- <ul class="header-links pull-left">
@@ -74,12 +54,12 @@
 			</div>
 		</div>
 		<!-- /TOP HEADER -->
-		<div class="progress">
+		<div class="progress" style="margin: 0px;height: 5px;display: none;" >
 			<div class="progress-bar progress-bar-striped" id="myBar" style="width:0%">
 			</div>
 		</div>
-
 		<!-- MAIN HEADER -->
+
 		<div id="header">
 			<!-- container -->
 			<div class="container">
@@ -126,6 +106,7 @@
 						</div>
 					</div>
 					<!-- /SEARCH BAR -->
+
 					<!-- ACCOUNT -->
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
@@ -160,31 +141,7 @@
 								</a>
 								<div class="cart-dropdown">
 									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="img/product01.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="img/product02.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									</div>
-									<div class="cart-summary">
-										<small>3 Item(s) selected</small>
-										<h5>SUBTOTAL: $2940.00</h5>
+										
 									</div>
 								</div>
 							</div>
@@ -209,7 +166,6 @@
 		<!-- /MAIN HEADER -->
 	</header>
 	<!-- /HEADER -->
-
 	<!-- NAVIGATION -->
 	<nav id="navigation">
 		<!-- container -->
@@ -218,13 +174,12 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/electronics">Electronics & Appliances</a></li>
-					<li><a href="/books">Books & Notes</a></li>
-					<li><a href="/vehicles">Vehicles</a></li>	
-					<li><a href="/sports">Sports & Hobbies</a></li>	
-					<li><a href="/hotdeals">Hot Deals</a></li>
-					<li><a href="#newsletter">Contact us</a></li>
+					<li><a href="/">Home</a></li>
+					<li class="active"><a href="/store/electronics">Electronics & Appliances</a></li>
+					<li><a href="/store/books">Books & Notes</a></li>
+					<li><a href="/store/vehicles">Vehicles</a></li>
+					<li><a href="/store/sports">Sports & Hobbies</a></li>
+					<li><a href="/store/hotdeals">Hot Deals</a></li>
 				</ul>
 				<!-- /NAV -->
 			</div>
@@ -233,7 +188,6 @@
 		<!-- /container -->
 	</nav>
 	<!-- /NAVIGATION -->
-
 
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb" class="section">
@@ -244,8 +198,8 @@
 				<div class="col-md-12">
 					<ul class="breadcrumb-tree">
 						<li><a href="/">Home</a></li>
-						<li><a href="/post/add">All Categories</a></li>
-						<li><a class="actv" href="/post/add/books&notes">books and notes</a></li>
+						<li><a href="#">All Categories</a></li>
+						<li class="active">ELECTRONICS & APPLIANCES</li>
 					</ul>
 				</div>
 			</div>
@@ -255,52 +209,106 @@
 	</div>
 	<!-- /BREADCRUMB -->
 
-	<!-- Post Menu -->
-	<div class="section">
+	<!-- SECTION -->
+	<div class="section" style="padding-top: 0px;">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-
-				<!-- section tab & slick -->
-				<div class="col-md-12" id="post-ad">
-					<h3 class="title">Books And Notes</h3>
-					<br>
-
-					<div class="row">
-						
-						<div class="col-md-3 col-xs-4 sub-container">
-							<div class="sub-box" onclick="openForm('Books')">
-								<img src="../../img/sub-books.svg" alt="Avatar" class="sub-img">
-								<h4>Books</h4>	
+				<!-- ASIDE -->
+				<div id="aside" class="col-md-3" style="padding-bottom: 40px;">
+					<form action="">
+					<div class="aside">
+						<h3 class="aside-title">Sory By</h3>
+						<div class="store-filter clearfix">
+							<div class="store-sort">
+								<label>
+									<select name="sort" class="input-select">
+										<option value="0">Most Recent</option>
+										<option value="1">Most Popular</option>
+										<option value="2">Price low-high</option>
+										<option value="3">Price high-low</option>
+									</select>
+								</label>
 							</div>
 						</div>
-						<div class="col-md-3 col-xs-4 sub-container">
-							<div class="sub-box" onclick="openForm('Notes')">
-								<img src="../../img/sub-notes.svg" alt="Avatar" class="sub-img">
-								<h4>Notes</h4>	
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-4 sub-container">
-							<div class="sub-box" onclick="openForm('ExamPaper')">
-								<img src="../../img/sub-paper.svg" alt="Avatar" class="sub-img">
-								<h4>Exam Paper</h4>	
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-4 sub-container">
-							<div class="sub-box" onclick="openForm('Other')">
-								<img src="../../img/sub-other.svg" alt="Avatar" class="sub-img">
-								<h4>Other Item</h4>	
-							</div>
-						</div>
-						
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<!-- /Post Menu -->
+					<!-- aside Widget -->
+					<div class="aside">
+						<h3 class="aside-title">Categories</h3>
+						<div class="checkbox-filter">
+							<div class="input-checkbox">
+								<input name='sub_type' value="BOOKS" type="checkbox" id="category-1">
+								<label for="category-1">
+									<span></span>
+									Books
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input name='sub_type' value="NOTES" type="checkbox" id="category-2">
+								<label for="category-2">
+									<span></span>
+									Notes
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input name='sub_type' value="EXAM PAPERS" type="checkbox" id="category-3">
+								<label for="category-3">
+									<span></span>
+									Exam Papers
+								</label>
+							</div>
+
+							<div class="input-checkbox">
+								<input name='sub_type' type="checkbox" value="OTHER" id="category-4">
+								<label for="category-4">
+									<span></span>
+									Other
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- /aside Widget -->
+					</form>
+					
+					<button class="btn btn-info" id="apply-filter" style="float: right;margin: 15px;">Apply</button>
+					<button class="btn btn-danger" id='cancel-filter' style="float: left;margin: 15px;">Cancel</button>
+
+					<br>
+				</div>
+				<!-- /ASIDE -->
+
+				<!-- STORE -->
+				<div id="products" class="col-md-9">
+
+					<div class="row store-products" style="margin-right: 0px; margin-left: 0px;padding: 2px;">
+						<!-- product -->
+
+						<!-- /product -->
+					</div>
+					<!-- /store products -->
+
+					<!-- Show More -->
+					<div class="showAllItems">
+						<a id="show-more" class="showMoreButton">See More</a>
+					</div>
+
+					<!-- store bottom filter -->
+					<div class="store-filter clearfix">
+						<span class="store-qty">Showing <span id='store-qt'></span> of <span id="total-qt"></span> products</span>
+					</div>
+					<!-- /store bottom filter -->
+				</div>
+				<!-- /STORE -->
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
 
 	<!-- NEWSLETTER -->
 	<div id="newsletter" class="section">
@@ -349,8 +357,7 @@
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
 							<h3 class="footer-title">About Us</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 								incididunt ut.</p>
 							<ul class="footer-links">
 								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
@@ -406,7 +413,6 @@
 			<!-- /container -->
 		</div>
 		<!-- /top footer -->
-
 	</footer>
 	<!-- /FOOTER -->
 
@@ -417,6 +423,29 @@
 	<script src="/js/nouislider.min.js"></script>
 	<script src="/js/jquery.zoom.min.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/cookiee.js"></script>
+	<script src="/js/wishlist.js"></script>
+
+	<script src="/js/store_script.js"></script>
+	<script src="/js/progressbar.js"></script>
+
+	<script>
+		
+		move(4000)
+
+	</script>
+
+
+
+	<script>
+		var max_limit = 7
+		$('#show-more').click(function () {
+			move(2500)
+			max_limit = max_limit + 7
+			getProducts('ELECTRONICS%20&%20APPLIANCES', max_limit)
+		})
+	</script>
+
 
 
 	<script>
@@ -430,6 +459,60 @@
 			$('#profile').hide();
 			$('#wishlist').hide();
 		}
+
+
+		$('#filter').click(function () {
+			$('#aside').show()
+		})
+
+		if ($(document).width() < 700) {
+			$('#filter').show()
+
+			$('#apply-filter').click(function () {
+				$('#aside').hide()
+			})
+			$('#cancel-filter').click(function () {
+				$('#aside').hide()
+			})
+
+		}
+
+	</script>
+
+	<script>
+		$(document).ready(function(){
+			let college_name = getCookie('college')
+			console.log(college_name)
+			if(!college_name){
+				$('#pop-coll-modal').click()
+			}
+			else{
+				$('#search').val(college_name)
+				$('#coll-data').text(college_name)
+				getProducts('ELECTRONICS%20&%20APPLIANCES', max_limit)
+			}
+
+			$.get('/products/count/ELECTRONICS%20&%20APPLIANCES?college='+ $('#search').val() ,function (count) {
+				$('#total-qt').html(count)
+			})
+		})
+
+
+		$('#search-btn').click(function (e) {
+			move(2500)
+			$.get('/products/count/ELECTRONICS%20&%20APPLIANCES?college='+ $('#search').val() ,function (count) {
+				$('#total-qt').html(count)
+			})
+			$('#coll-data').text($('#search').val())
+			setCookie('college',$('#search').val() , 10)
+			e.preventDefault()
+			getProducts('ELECTRONICS%20&%20APPLIANCES', max_limit)
+		})
+
+		$('#apply-filter').click(function(){
+			getProducts('ELECTRONICS%20&%20APPLIANCES', max_limit, $('form').serialize())
+		})
+
 	</script>
 
 </body>

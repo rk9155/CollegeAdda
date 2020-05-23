@@ -9,6 +9,7 @@ const post = require('./Routes/post');
 const items = require('./Routes/items');
 const myadds = require('./Routes/my_adds')
 const my_wishlist = require('./Routes/my_wishlist')
+const store = require('./Routes/store')
 const auth = require('./Routes/passport');
 const loggedInUser = require('./Routes/loggedInUser');
 const keys = require('./config/keys');
@@ -30,35 +31,9 @@ app.get('/', (req, res) => {
     });
 })
 
-
-app.get('/electronics', (req , res)=>{
-    res.render('electronics', {
-        user: req.user ? req.user : ""
-    });
-})
-app.get('/books', (req, res) => {
-    res.render('books', {
-        user: req.user ? req.user : ""
-    });
-})
-app.get('/vehicles', (req, res) => {
-    res.render('vehicles', {
-        user: req.user ? req.user : ""
-    });
-})
-app.get('/sports', (req, res) => {
-    res.render('sports', {
-        user: req.user ? req.user : ""
-    });
-})
-app.get('/hotdeals', (req, res) => {
-    res.render('hotdeals', {
-        user: req.user ? req.user : ""
-    });
-})
-
 app.set('view engine', 'ejs');
 app.use(express.static('./Template'));
+app.use('/store' ,store)
 app.use('/products', home);
 app.use('/post', post);
 app.use('/image', image);

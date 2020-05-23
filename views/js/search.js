@@ -148,5 +148,6 @@ $.getJSON('json/college.json', function (data) {
 
 $('#search-btn').click(function (e) {
 	e.preventDefault()
+
     getProductsFromCollege($('#search').val(), max_limit)
 })
