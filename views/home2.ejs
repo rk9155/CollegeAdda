@@ -703,8 +703,12 @@
             $('.sell-button').addClass('mt-2');
         }
 
+        var data;
+        $.getJSON('./State_City.json', function (data) {
+            data = data
+        });
 
-        $('#search').on('keyup', function (e) {
+        $('#search').on('keydown', function (e) {
             if (e.keyCode == 39) {
                 $(".searched:hover").next().focus();
 
@@ -718,17 +722,17 @@
             $('#searchResult').show();
             let searchData = $(this).val();
             let newReg = new RegExp(searchData, "i");
-            $.getJSON('./State_City.json', function (data) {
-                data.clg.forEach((clg_name) => {
-                    if (clg_name.search(newReg) != -1) {
-                        $('#searchResult').append(`<li class="list-group-item searched">${clg_name}</li>`);
-                        $('.searched').click(function () {
-                            let link = $(this).text().replace(/ /g, '%20');
-                            $.get('/products/search/' + link, function (product) {
-                                if (product.length != 0) {
-                                    $('.products').html('');
-                                    product.forEach((prod_deta) => {
-                                        $('.products').append(`<div class="card col-6 col-md-3 col-lg-3 col-sm-4"
+
+            data.clg.forEach((clg_name) => {
+                if (clg_name.search(newReg) != -1) {
+                    $('#searchResult').append(`<li class="list-group-item searched">${clg_name}</li>`);
+                    $('.searched').click(function () {
+                        let link = $(this).text().replace(/ /g, '%20');
+                        $.get('/products/search/' + link, function (product) {
+                            if (product.length != 0) {
+                                $('.products').html('');
+                                product.forEach((prod_deta) => {
+                                    $('.products').append(`<div class="card col-6 col-md-3 col-lg-3 col-sm-4"
                                 style="background-color: inherit;display: inline-block;border: none; margin: 10px 0px;">
                                 <img class="card-img-top" src="/image/${prod_deta.image[0]}" alt="Product Image"
                                     style="padding: 10px 30px;height: 170px;" />
@@ -740,25 +744,24 @@
                                     </p>
                                 </div>
                             </div>`
-                                        )
-                                        $('.card').on('click', function () {
-                                            const title = $(this).find('.prod-title').text();
-                                            window.location.href = '/items/' + title;
-                                        });
-                                    })
-                                }
-                                else {
-                                    $('.products').html('Oops nothing to be sold in your college');
-                                }
+                                    )
+                                    $('.card').on('click', function () {
+                                        const title = $(this).find('.prod-title').text();
+                                        window.location.href = '/items/' + title;
+                                    });
+                                })
+                            }
+                            else {
+                                $('.products').html('Oops nothing to be sold in your college');
+                            }
 
-                            })
-                        });
-                    }
-                    if (searchData == '') {
-                        $('#searchResult').html(``);
-                        $('#searchResult').hide();
-                    }
-                });
+                        })
+                    });
+                }
+                if (searchData == '') {
+                    $('#searchResult').html(``);
+                    $('#searchResult').hide();
+                }
             });
         });
         $('#search').focusout(function (e) {
