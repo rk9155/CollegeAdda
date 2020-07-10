@@ -157,6 +157,9 @@ $.getJSON('../json/college.json', function (data) {
 });
 
 $('#search-btn').click(function (e) {
+	$.get('/products/count?college='+ $('#search').val(),function (count) {
+		$('#total-qt').html(count)
+	})
 	move(2500)
 	$('#coll-data').text($('#search').val())
 	setCookie('college',$('#search').val() , 10)

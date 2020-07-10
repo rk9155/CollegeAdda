@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+	<title>COAD - College Adda</title>
+
+	<!-- Google font -->
+	<!-- Bootstrap -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+	<link rel="icon" href="/img/favicon.png">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="/css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="/css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="/css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="/css/style.css" />
+
+	<script src="/js/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+	<a class="float post-add" <% if( user != ""){%> href="//post/add">
+		<%}else{%>
+		href="//auth/google">
+		<%}%>SELL</a>
+
+	<!-- HEADER -->
+	<header>
+		<!-- TOP HEADER -->
+		<div id="top-header">
+			<div class="container">
+				<!-- <ul class="header-links pull-left">
+					<li><a href="/#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+					<li><a href="/#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+					<li><a href="/#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+				</ul> -->
+				<ul class="header-links">
+					<li><a href="/#"><i class="fa fa-map-marker"></i><span id="location"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /TOP HEADER -->
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped" id="myBar" style="width:0%">
+			</div>
+		</div>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="/#" class="logo">
+								<img src="/img/logo.png" alt="">
+							</a>
+						</div>
+					</div>
+					<!-- /LOGO -->
+
+					<div class="col-md-6 clearfix"></div>
+
+
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
+							<!-- Login -->
+							<div id="login">
+								<a class="login-button" href="//auth/google">
+									<i class="fa fa-google"></i>
+									<span>Login</span>
+								</a>
+							</div>
+							<!-- /Login -->
+							
+							<!-- Profile -->
+							<div class="dropdown" id="profile">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<img src="<%=user.picture%>" style='display: block; height: 40px;width: 40px;border-radius: 50%;'>
+	</a>
+	<ul class="dropdown-menu">
+		<li><a href="//api/profile">Profile</a></li>
+		<li><a href="//api/logout">Logout</a></li>
+	</ul>
+	</div>
+	<!-- /Profile -->
+
+	<!-- Wishlist -->
+	<div class="dropdown" id='wishlist'>
+		<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+			<i class="fa fa-heart-o"></i>
+			<span>Your Wishlist</span>
+			<div class="qty"></div>
+		</a>
+		<div class="cart-dropdown">
+			<div class="cart-list">
+
+			</div>
+		</div>
+	</div>
+	<!-- /Wishlist -->
+
+	<!-- Menu Toogle -->
+	<div class="menu-toggle">
+		<a href="/#">
+			<i class="fa fa-bars"></i>
+			<span>Menu</span>
+		</a>
+	</div>
+	<!-- /Menu Toogle -->
+
+
+	</div>
+	</div>
+	<!-- /ACCOUNT -->
+	</div>
+	<!-- row -->
+	</div>
+	<!-- container -->
+	</div>
+	<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<div class="content">
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- Details -->
+					<div class="col-md-3 order-details">
+						<div class="text-center">
+							<img src="<%=user.picture%>" class="avatar img-circle img-thumbnail" alt="avatar">
+						</div>
+						</hr><br><br>
+						<div class="text-center">
+							
+							<table class="table table-striped">
+								<body>
+								  <tr>
+									<th scope="col">Total Ads</th>
+									<td scope="col"><%=my_ad.length%></td>
+								  </tr>
+							
+								</tbody>
+							  </table>
+							
+						</div>
+					</div>
+					<!-- /Details -->
+
+					<div class="col-md-9 ">
+						<!-- section title -->
+						<div class="col-md-12" style="margin-bottom: 20px;font-size: 18px;padding: 0;">
+							<div class="section-title">
+								<div class="section-nav" style="float: left;">
+									<ul class="section-tab-nav tab-nav">
+										<li><a href="/api/profile/details">Your Details</a></li>
+										<li class="active"><a href="/api/profile/my_ads" >Your Ads</a></li>
+										<li><a href="/api/profile/my_orders" >Your Purchase</a></li>
+										<li><a href="/api/profile/my_wishlist" >Your Wishlist</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<br>
+						<!-- /section title -->
+						<!--  Details -->
+						<div class="details" style="padding-top: 20px;">
+						
+							<% for (var i = 0; i < my_ad.length; i++) { %>
+								<div class="col-md-4 col-xs-6" id='store-product'>
+									<span id='prod_id' style='display:none'><%=my_ad[i]._id%></span>
+									<div class="product">
+										<div class="product-img">
+											<img src="/image/<%=my_ad[i].image[0]%>" alt="Product image">
+											<div class="product-label">
+												<span class="new">NEW</span>
+											</div>
+										</div>
+										<div class="product-body">
+											<h4 class="product-price"><span>₹</span><%=my_ad[i].price%></h4>
+											<h6 class="product-name"><a href="#" class="prod-title"><%=my_ad[i].title%></a></h6>
+											<hr>
+											<h6 class="product-category"><%=my_ad[i].college_name%></h6>
+										</div>
+									</div>
+								</div>
+								<script>
+									$('.product-img').on('click', function () {
+										const title = $(this).parent().siblings('#prod_id').text();
+										window.location.href = '../../../items/' + title;
+									});
+								</script>
+							<% } %>
+
+							
+						</div>
+						<!-- / Details -->
+
+						
+					</div>
+
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut.</p>
+								<ul class="footer-links">
+									<li><a href="/#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+									<li><a href="/#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+									<li><a href="/#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categories</h3>
+								<ul class="footer-links">
+									<li><a href="/#">Hot deals</a></li>
+									<li><a href="/#">Laptops</a></li>
+									<li><a href="/#">Smartphones</a></li>
+									<li><a href="/#">Cameras</a></li>
+									<li><a href="/#">Accessories</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Information</h3>
+								<ul class="footer-links">
+									<li><a href="/#">About Us</a></li>
+									<li><a href="/#">Contact Us</a></li>
+									<li><a href="/#">Privacy Policy</a></li>
+									<li><a href="/#">Orders and Returns</a></li>
+									<li><a href="/#">Terms & Conditions</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li><a href="/#">My Account</a></li>
+									<li><a href="/#">View Cart</a></li>
+									<li><a href="/#">Wishlist</a></li>
+									<li><a href="/#">Track My Order</a></li>
+									<li><a href="/#">Help</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+		</footer>
+		<!-- /FOOTER -->
+		
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/slick.min.js"></script>
+		<script src="/js/nouislider.min.js"></script>
+		<script src="/js/jquery.zoom.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/cookiee.js"></script>
+		<script src="/js/script.js"></script>
+
+
+		<script>
+			if ("<%=user.picture%>" != "") {
+				$('#login').hide();
+				$('#profile').show();
+				$('#wishlist').show();
+			}
+			else {
+				$('#login').show();
+				$('#profile').hide();
+				$('#wishlist').hide();
+			}
+
+
+		</script>
+
+		<script src="/js/wishlist.js"></script>
+		<script src="/js/progressbar.js"></script>
+		<script>
+			move(4000)
+		</script>
+		<script src="/js/location.js"></script>
+
+</body>
+
+</html>

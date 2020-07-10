@@ -68,7 +68,7 @@
 			border: 0.5px solid lightgray;
 			padding: 10px;
 			height: 100%;
-			max-width: 100%;
+			width: 100%;
 		}
 
 	</style>
@@ -278,7 +278,11 @@
 									<input type="text" name="type" style="display: none;" value="<%=category%>">
 									<input type="text" name="sub_type" style="display: none;" value="<%=item%>">
 									<div class="title-and-description">
-										<p style="text-align: center;">Ad Title And Product Description</p><br>
+										<div class="form-top">
+											<span>Ad Title And Product Description</span>
+											<i style="float: right;" class="fa fa-arrow-right" onclick="$('.title-and-description > .continue').click()"></i>
+										</div>
+										<br>
 										<hr>
 										<label for="ad-title">Ad Title *</label><br>
 										<textarea required name="title" maxlength="50" placeholder="Give an appropriate title for the product." id="ad-title" rows="3"></textarea>
@@ -290,96 +294,75 @@
 										<br><br><br><br>
 										<button class="continue"><span>Continue</span></button>
 									</div>
-									<div class="images"  style="text-align: center;">
-										<p>Product Images</p><br>
-										<hr>
-										<div class="col-md-12">
-											<div class="row">
-												<input required type="file" style="display: none;" class='img1' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img1'>
-													<img src="../../../img/upload.png" id='notUpload1' >
-													<img src="../../../img/Done.png" id='uploaded1' alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img2' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img2' >
-													<img src="../../../img/upload.png" id='notUpload2'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded2'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img3' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img3' >
-													<img src="../../../img/upload.png" id='notUpload3'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded3'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img4' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img4' >
-													<img src="../../../img/upload.png" id='notUpload4'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded4'  alt="donee" style="display: none;">
-												</div><br>
-												<input type="file" style="display: none;" class='img5' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img5' >
-													<img src="../../../img/upload.png" id='notUpload5'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded5'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img6' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img6' >
-													<img src="../../../img/upload.png" id='notUpload6'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded6'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img7' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img7' >
-													<img src="../../../img/upload.png" id='notUpload7'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded7'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img8' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img8' >
-													<img src="../../../img/upload.png" id='notUpload8'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded8'  alt="donee" style="display: none;">
-												</div><br>
-												<input type="file" style="display: none;" class='img9' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img9' >
-													<img src="../../../img/upload.png" id='notUpload9'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded9'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img10' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img10' >
-													<img src="../../../img/upload.png" id='notUpload10'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded10'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img11' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img11' >
-													<img src="../../../img/upload.png" id='notUpload11'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded11'  alt="donee" style="display: none;">
-												</div>
-												<input type="file" style="display: none;" class='img12' name="Image">
-												<div class="uploadFiles col-md-3 col-xs-4" id='img12' >
-													<img src="../../../img/upload.png" id='notUpload12'  alt="upload image">
-													<img src="../../../img/Done.png" id='uploaded12'  alt="donee" style="display: none;">
-												</div>
-											</div>
-										</div>
-										<br><span>Click on the above icon and upload atleast one original and recent pictures of the product.</span>
-										<br><br><br><br>
-										<button class="continue"><span>Continue</span></button>
-									</div>
-									<div class="price">
-										<p style="text-align: center;">Product Price</p><br>
-										<hr>
-										<label for="price">Ad Title *</label><br>
-										<input name="price" required type="tel" placeholder="Set a price for the product." id="price" rows="3" onfocus="this.value = '&#8377  '"></input>
-										<br><br><br><br>
-										<button class="continue"><span>Continue</span></button>
-									</div>
+
 									<div class="location">
-										<p style="text-align: center;">Confirm Your Location</p><br>
+										<div class="form-top">
+											<i style="float: left;" class="fa fa-arrow-left" onclick=
+											"$('.location').hide();
+											$('.title-and-description').show()"></i>
+											<span>Confirm Your Location</span>
+											<i style="float: right;" class="fa fa-arrow-right"  onclick="$('.location > .continue').click()"></i>
+										</div>
+										<br>
 										<hr>
 										<label for="college">College Name *</label><br>
-										<select required id="college" name="college_name"></select>
+										<select required id="college" name="college_name">
+											<option value="" selected></option>
+										</select>
 										<br><span>Name of the college in which the product is to be sold.</span>
 										<br><br><br><br>
 										<button class="continue"><span>Continue</span></button>
 									</div>
+
+									<div class="images"  style="text-align: center;">
+										<div class="form-top">
+											<i style="float: left;" class="fa fa-arrow-left" onclick=
+											"$('.images').hide();
+											$('.location').show()"></i>
+											<span>Product Images</span>
+											<i style="float: right;" class="fa fa-arrow-right" onclick="$('.images > .continue').click()"></i>
+										</div>
+										<br>
+										<hr>
+										<div class="col-md-12">
+											<div class="row" id="uploadedImages">
+												<input required type="file" style="display: none;" class='img1' name="Image" onchange="changeImage(this);">
+												<div class="uploadFiles col-md-3 col-xs-4" id='img1' onclick="takeImage(this)">
+													<img src="../../../img/upload.png" id='notUpload1' alt="upload image">
+												</div>
+												
+											</div>
+										</div>
+										<br><span>Click on the above icon and upload atleast one original and recent pictures of the product (Maximum 12).</span>
+										<br><span class="text-danger" style="display: none;" id="maxImg">Maximum 12 images are acepted.</span>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									<div class="price">
+										<div class="form-top">
+											<i style="float: left;" class="fa fa-arrow-left" onclick=
+											"$('.price').hide();
+											$('.images').show()"></i>
+											<span>Product Price</span>
+											<i style="float: right;" class="fa fa-arrow-right"  onclick="$('.price > .continue').click()"></i>
+										</div>
+										<br>
+										<hr>
+										<label for="price">Price  *</label><br>
+										<input name="price" required type="tel" placeholder="Set a price for the product." id="price" rows="3" value= '&#8377  '></input>
+										<br><span class="text-danger" id="wrong-price" style="display: none;">Enter the price correctly.</span>
+										<br><br><br><br>
+										<button class="continue"><span>Continue</span></button>
+									</div>
+									
 									<div class="personal">
-										<p style="text-align: center;">Product Price</p><br>
+										<div class="form-top">
+											<i style="float: left;" class="fa fa-arrow-left" onclick=
+											"$('.personal').hide();
+											$('.price').show()"></i>
+											<span>Seller Information</span>
+										</div>
+										<br>
 										<hr>
 										<label for="owner_name">Name *</label>
 										<br><input required type="text" name="owner_name" maxlength="70" id="owner_name" value="<%=user.name%>">
@@ -395,8 +378,11 @@
 							</div>
 						</div>
                         <div class="col-md-4" style="padding: 5px;">
-                            <div class="form-box" style="background-color: white;border-radius: 10px;">
-								<p>Product Evaluation</p><br>
+							<div class="form-box" style="background-color: white;border-radius: 10px;">
+								<div class="form-top">
+									<span>Product Evaluation</span>
+								</div>
+								<br>
 								<hr>
 								<div class="prod-evaluation">
 									<label>Seller Info</label>
@@ -404,6 +390,11 @@
 									<li><%=user.email%></li>
 									<br><label>Product</label>
 									<li><%=item.toUpperCase()%> in <%=category.replace('&', ' and ')%></li>
+
+									<div id="eval-title"></div>
+									<div id="eval-location"></div>	
+									<div id="eval-price"></div>
+								
 								</div>
 							</div>
 						</div>
@@ -552,17 +543,38 @@
             });
         });
 
-		$('.uploadFiles').click(function(){
-            const inputFile = $(this).attr('id');
-            $("."+inputFile).click();
-            console.log($("."+inputFile).val());
-            $("."+inputFile).on('change',function(){
-                if($("."+inputFile).val() != ""){
-                    $('#notUpload'+inputFile.substring(3)).hide();
-                    $('#uploaded'+inputFile.substring(3)).show();
-                }
-            });     
-		});
+		function takeImage(input){
+            const inputFile = $(input).attr('id');
+            $("."+inputFile).click();    
+		}
+
+		function changeImage(input) {
+			var curr = parseInt($(input).attr('class').substring(3))
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					$("#notUpload"+curr).attr('src', e.target.result)
+					// $('#notUpload1').attr('src', e.target.result)
+				};
+
+				reader.readAsDataURL(input.files[0]);
+				if(curr == 12){
+					$('#maxImg').show()
+				}
+				
+				else if($('.img'+(curr+1)).length == 0){
+					$('#uploadedImages').append(`
+					<input type="file" style="display: none;" class='img${curr+1}' name="Image"  onchange="changeImage(this);">
+						<div class="uploadFiles col-md-3 col-xs-4" id='img${curr+1}' onclick="takeImage(this)">
+							<img src="../../../img/upload.png" id='notUpload${curr+1}'  alt="upload image">
+						</div>`)
+				}
+
+
+				
+			}
+		}
 		
 		$('.price').hide();
 		$('.personal').hide();
@@ -570,34 +582,52 @@
 		$('.images').hide();
 
 		$('.title-and-description > .continue').click(function(){
-			$('.prod-evaluation').append(`
+			if( $('#ad-title').val() != "" && $('#ad-description').val() != "" ){
+				$('.prod-evaluation > #eval-title').html(`
 				<br><label>Title</label>
 				<li>${$('#ad-title').val()}</li>
 				<br><label>Description</label>
 				<li>${$('#ad-description').val()}</li>
-			`)
-			$('.title-and-description').hide();
-			$('.location').show()
+				`)
+				$('.title-and-description').hide();
+				$('.location').show()
+			}
 		});
 		$('.location > .continue').click(function(){
-			$('.prod-evaluation').append(`
+
+			if($('#college').val() != "" ){
+				$('.prod-evaluation > #eval-location').html(`
 				<br><label>College</label>
 				<li>${$('#college').val()}</li>
-			`)
-			$('.location').hide();
-			$('.images').show()
+				`)
+				$('.location').hide();
+				$('.images').show()
+			}
 		});
+		
 		$('.images > .continue').click(function(){
-			$('.images').hide();
-			$('.price').show()
+			if($('#ad-title').val() != "" && $('#ad-description').val() != "" ){
+				$('.images').hide();
+				$('.price').show()
+			}
+			
 		});
+
 		$('.price > .continue').click(function(){
-			$('.prod-evaluation').append(`
+
+			if($('#price').val() != "₹  "){
+				$('.prod-evaluation > #eval-price').html(`
 				<br><label>Price</label>
 				<li>${$('#price').val()}</li>
-			`)
-			$('.price').hide();
-			$('.personal').show()
+				`)
+				$('#wrong-price').hide()
+				$('.price').hide();
+				$('.personal').show()
+			}
+			else{
+				$('#wrong-price').show()
+			}
+			
 		});
 		
 
@@ -606,3 +636,5 @@
 </body>
 
 </html>
+
+lo

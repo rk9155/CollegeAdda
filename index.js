@@ -31,6 +31,12 @@ app.get('/', (req, res) => {
     });
 })
 
+app.get('/checkout',(req,res)=>{
+    res.render('checkout', {
+        user: req.user ? req.user : ""
+    });
+})
+
 app.set('view engine', 'ejs');
 app.use(express.static('./Template'));
 app.use('/store' ,store)
@@ -41,7 +47,6 @@ app.use('/upload', upload);
 app.use('/items', items);
 app.use('/auth', auth);
 app.use('/api', loggedInUser);
-app.use('/myadds', myadds);
 app.use('/wishlist', my_wishlist);
 
 const PORT = process.env.PORT || 3000;
