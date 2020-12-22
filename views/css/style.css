@@ -895,9 +895,9 @@ textarea.input {
   top: 0;
   bottom: 0;
   left: 0px;
-  width: 60%;
+  width: 40%;
   background: rgb(39, 36, 67);
-  opacity: 0.9;
+  opacity: 0.8;
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
   transform: skewX(-45deg);
@@ -925,6 +925,8 @@ textarea.input {
 
 .shop .shop-img>img {
   width: 100%;
+  height: 200px;
+
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
