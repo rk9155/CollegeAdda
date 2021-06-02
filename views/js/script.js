@@ -1,5 +1,5 @@
-var max_limit = 7
-var max_limit_all = 7
+var max_limit = 8
+var max_limit_all = 8
 $(document).ready(function(){
 	let college_name = getCookie('college')
 	if(!college_name){
@@ -24,7 +24,7 @@ $.get('/products/count?college='+ $('#search').val(),function (count) {
 
 $('#show-more').click(function () {
 	move(2500)
-	max_limit_all = max_limit_all + 7
+	max_limit_all = max_limit_all + 8
 	getProducts('', max_limit_all)
 })
 if ("<%=user.picture%>" != "") {

@@ -36,10 +36,39 @@
 
 <body>
 
+	<div id="signin-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+	  
+		  <!-- Modal content-->
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h4 class="modal-title">Do you want to continue.</h4>
+			</div>
+			<div class="modal-body">
+				<p>For selling a product you must need to signin.</p>
+				<p>Would you like to continue?</p>
+				
+				<div style="width: 100%;text-align: right;" >
+					<a class="btn cancel-btn" data-dismiss='modal' id="cancel-modal">Cancel</a>
+					<a class="btn continue-btn" id="continue-modal" href="/auth/google">Continue</a>
+				</div>
+
+			</div>
+		  </div>
+	  
+		</div>
+	</div>
+
 	<a class="float post-add" <% if( user != ""){%> href="/post/add">
 		<%}else{%>
-		href="/auth/google">
+		href="#" data-toggle="modal" data-keyboard="false" data-target="#signin-modal"
+		>
+
 		<%}%>SELL</a>
+	<!-- <a class="float post-add" <% if( user != ""){%> href="/post/add">
+		<%}else{%>
+		href="/auth/google">
+		<%}%>SELL</a> -->
 
 	<!-- HEADER -->
 	<header>
@@ -88,7 +117,7 @@
 							</div>
 							<div class="modal-body">
 
-								<input class="input" autofocus autocomplete="off" id="search" placeholder="Select your college">
+								<input class="input" autofocus autocomplete="off" id="search" placeholder="Select your college. eg NITP">
 								<ul class="list-group col-12" style="position: absolute;z-index: 20;" id="searchResult"></ul>
 								<div style="width: 100%;" class="text-center">
 									<button class="search-btn" data-dismiss='modal' id="search-btn">Search</button>
@@ -365,6 +394,7 @@
 					</div>
 					<!-- /section title -->
 
+
 					<!-- store products -->
 					<div class="row store-products" style="margin-right: 0px; margin-left: 0px;padding: 2px;">
 						<!-- product -->
@@ -493,6 +523,7 @@
 
 
 	<script>
+
 		if ("<%=user.picture%>" != "") {
 			$('#login').hide();
 			$('#profile').show();
@@ -509,7 +540,7 @@
 	<script src="js/wishlist.js"></script>
 	<script src="js/progressbar.js"></script>
 	<script>
-		move(4000)
+		move(Math.floor(Math.random() * (6000 - 3000 + 1) ) + 3000)
 	</script>
 	<script src="js/location.js"></script>
 

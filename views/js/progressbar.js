@@ -1,9 +1,9 @@
 function move(time) {
     $('.progress').show()
-    $('#products').fadeOut();
+    $('.store-products').fadeOut();
     $("#myBar").animate({width:"100%"},time,function(){
         $('.progress').hide()
-        $('#products').fadeIn()
+        $('.store-products').fadeIn()
         $("#myBar").css('width','0')
     })
 }
