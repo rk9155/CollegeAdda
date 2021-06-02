@@ -1,6 +1,8 @@
 # CollegeAdda
 
 **web**- https://college-adda.herokuapp.com/
+
+![Poster](/poster/poster.jpg)
  
 A full-featured ECommerce web application for selling and buying old yet useful goods within a college.
 
