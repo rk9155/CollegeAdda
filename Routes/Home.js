@@ -36,11 +36,16 @@ router.get('/category/:limit', (req, res) => {
 
 router.get('/category/:category/:limit', (req, res) => {
     let limit = parseInt(req.params.limit);
+    st = req.params.category
+    cn = req.query.college
     wishlist = []
     if (req.user)
         wishlist = req.user.my_wishlist
     async function getProducts() {
-        const product = await products.find({ sub_type: req.params.category,college_name: req.query.college })
+        const product = await products.find({ 
+            sub_type: req.params.category,
+            college_name: req.query.college 
+        })
             .sort({ date: 1 })
             .limit(limit)
 
@@ -67,6 +72,8 @@ router.get('/category/:category/:limit', (req, res) => {
 
 
 router.get('/store/:category/:limit', (req, res) => {
+    console.log(req.params.category)
+
     var ds = -1
     var ps = -1
     if(req.query.sort == 0){

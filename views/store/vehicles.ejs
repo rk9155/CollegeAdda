@@ -393,7 +393,7 @@
 		$('#show-more').click(function () {
 			move(2500)
 			max_limit = max_limit + 7
-			getProducts('BOOKS%20AND%20NOTES', max_limit)
+			getProducts('vehicles', max_limit)
 		})
 	</script>
 
@@ -440,10 +440,10 @@
 			else{
 				$('#search').val(college_name)
 				$('#coll-data').text(college_name)
-				getProducts('VEHICLES', max_limit)
+				getProducts('vehicles', max_limit)
 			}
 
-			$.get('/products/count/VEHICLES?college='+ $('#search').val() ,function (count) {
+			$.get('/products/count/vehicles?college='+ $('#search').val() ,function (count) {
 				$('#total-qt').html(count)
 			})
 		})
@@ -451,17 +451,17 @@
 
 		$('#search-btn').click(function (e) {
 			move(2500)
-			$.get('/products/count/VEHICLES?college='+ $('#search').val() ,function (count) {
+			$.get('/products/count/vehicles?college='+ $('#search').val() ,function (count) {
 				$('#total-qt').html(count)
 			})
 			$('#coll-data').text($('#search').val())
 			setCookie('college',$('#search').val() , 10)
 			e.preventDefault()
-			getProducts('VEHICLES', max_limit)
+			getProducts('vehicles', max_limit)
 		})
 
 		$('#apply-filter').click(function(){
-			getProducts('VEHICLES', max_limit, $('form').serialize())
+			getProducts('vehicles', max_limit, $('form').serialize())
 		})
 
 	</script>

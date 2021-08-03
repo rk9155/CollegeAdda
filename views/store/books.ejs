@@ -391,7 +391,7 @@
 		$('#show-more').click(function () {
 			move(2500)
 			max_limit = max_limit + 7
-			getProducts('BOOKS%20AND%20NOTES', max_limit)
+			getProducts('books$notes', max_limit)
 		})
 	</script>
 
@@ -438,10 +438,10 @@
 			else{
 				$('#search').val(college_name)
 				$('#coll-data').text(college_name)
-				getProducts('BOOKS%20AND%20NOTES', max_limit)
+				getProducts('books$notes', max_limit)
 			}
 
-			$.get('/products/count/BOOKS%20AND%20NOTES?college='+ $('#search').val() ,function (count) {
+			$.get('/products/count/books$notes?college='+ $('#search').val() ,function (count) {
 				$('#total-qt').html(count)
 			})
 		})
@@ -449,17 +449,17 @@
 
 		$('#search-btn').click(function (e) {
 			move(2500)
-			$.get('/products/count/BOOKS%20AND%20NOTES?college='+ $('#search').val() ,function (count) {
+			$.get('/products/count/books$notes?college='+ $('#search').val() ,function (count) {
 				$('#total-qt').html(count)
 			})
 			$('#coll-data').text($('#search').val())
 			setCookie('college',$('#search').val() , 10)
 			e.preventDefault()
-			getProducts('BOOKS%20AND%20NOTES', max_limit)
+			getProducts('books$notes', max_limit)
 		})
 
 		$('#apply-filter').click(function(){
-			getProducts('BOOKS%20AND%20NOTES', max_limit, $('form').serialize())
+			getProducts('books$notes', max_limit, $('form').serialize())
 		})
 
 	</script>

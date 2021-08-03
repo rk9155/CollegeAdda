@@ -48,7 +48,7 @@ router.post('/', upload, function (req, res, next) {
     const uploasProduct = new productUpload({
         title: title,
         type: type,
-        sub_type: sub_type,
+        sub_type: sub_type.toUpperCase(),
         owner_name: owner_name,
         owner_mob: owner_mob,
         owner_email: owner_email,

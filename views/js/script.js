@@ -35,6 +35,7 @@ if ("<%=user.picture%>" != "") {
 
 function getProducts(link, limit) {
 	$.get('/products/category' + link + '/' + limit +'?college='+ $('#search').val(), function (product) {
+		console.log(product);
 		if (product.length != 0) {
 			$('#store-qt').html(product.length)
 			$('.store-products').html('');
@@ -113,6 +114,7 @@ $('.main-category').click(function () {
 	$(this).parent('li').siblings().removeClass('active');
 	$(this).parent('li').addClass('active');
 	let link = $(this).attr('id').replace(/ /g, '%20');
+	console.log(link)
 	getProducts('/' + link, max_limit)
 
 	$.get('/products/count/sub/'+link + '?college='+ $('#search').val(),function (count) {
